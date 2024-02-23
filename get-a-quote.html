@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Logis Bootstrap Template - Get a Quote</title>
+  <title>Sign Up</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,8 +46,8 @@
 
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Logis</h1>
+        <img src="assets/img/logo.png" alt="">
+        <h1><span style="color:green;">G</span>lobal<span style="color:brown;">H</span>ub<span style="color:blue;">C</span>onnect</h1>
       </a>
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -58,25 +58,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Get a Quote</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -92,8 +74,7 @@
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
-              <h2>Get a Quote</h2>
-              <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <h2>Sign Up</h2>
             </div>
           </div>
         </div>
@@ -102,7 +83,7 @@
         <div class="container">
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Get a Quote</li>
+            <li>Sign Up</li>
           </ol>
         </div>
       </nav>
@@ -112,58 +93,42 @@
     <section id="get-a-quote" class="get-a-quote">
       <div class="container" data-aos="fade-up">
 
-        <div class="row g-0">
+        <div class="row">
 
-          <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div>
+          <!-- <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div> -->
 
           <div class="col-lg-7">
             <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3>Get a quote</h3>
-              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+              <!-- <h3>Get a quote</h3>
+              <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p> -->
               <div class="row gy-4">
 
-                <div class="col-md-6">
-                  <input type="text" name="departure" class="form-control" placeholder="City of Departure" required>
+                <div class="">
+                  <label for="firstname">First Name</label>
+                  <input type="text" name="firstname" class="form-control" placeholder="First Name" required>
                 </div>
 
-                <div class="col-md-6">
-                  <input type="text" name="delivery" class="form-control" placeholder="Delivery City" required>
+                <div class="">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" name="lastname" class="form-control" placeholder="Last Name" required>
                 </div>
 
-                <div class="col-md-6">
-                  <input type="text" name="weight" class="form-control" placeholder="Total Weight (kg)" required>
+                <div class="">
+                  <label for="email">E-Mail</label>
+                  <input type="email" name="email" class="form-control" placeholder="E mail" required>
                 </div>
 
-                <div class="col-md-6">
-                  <input type="text" name="dimensions" class="form-control" placeholder="Dimensions (cm)" required>
+                <div class="">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
 
-                <div class="col-lg-12">
-                  <h4>Your Personal Details</h4>
+                <div class="">
+                  <label for="confirmpassword">Confirm Password</label>
+                  <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
                 </div>
 
-                <div class="col-md-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required>
-                </div>
-
-                <div class="col-md-12 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required>
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-
-                  <button type="submit">Get a quote</button>
+                  <button type="submit">Signup</button>
                 </div>
 
               </div>
