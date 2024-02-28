@@ -10,13 +10,18 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,13 +34,6 @@
   <!--  Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Logis
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -72,22 +70,23 @@
           <!-- <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div> -->
 
           <div class="col-6 mx-auto">
-            <form action="forms/quote.php" method="post" class="php-email-form">
+            <form method="post">
               <div class="row gy-4">
 
                 <div class="">
                   <label for="firstname">First Name</label>
-                  <input type="text" name="firstname" class="form-control" placeholder="First Name" required>
+                  <input type="text" name="firstname" id="f_name" class="form-control" placeholder="First Name"
+                    required>
                 </div>
 
                 <div class="">
                   <label for="lastname">Last Name</label>
-                  <input type="text" name="lastname" class="form-control" placeholder="Last Name" required>
+                  <input type="text" name="lastname" id="l_name" class=" form-control" placeholder="Last Name" required>
                 </div>
 
                 <div class="">
                   <label for="email">E-Mail</label>
-                  <input type="email" name="email" class="form-control" placeholder="E mail" required>
+                  <input type="email" name="email" id="mail" class="form-control" placeholder="E mail" required>
                 </div>
 
                 <div class="">
@@ -97,26 +96,88 @@
 
                 <div class="">
                   <label for="confirmpassword">Confirm Password</label>
-                  <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required>
+                  <input type="password" name="confirmpassword" id="password" class="form-control"
+                    placeholder="Confirm Password" required>
                 </div>
 
-                  <button type="submit">Signup</button>
-                </div>
-
+                <button class="btn btn-primary" id="signup" type="submit" onclick="signUp()">Signup</button>
               </div>
-            </form>
-          </div><!-- End Quote Form -->
 
-        </div>
+          </div>
+          </form>
+        </div><!-- End Quote Form -->
+
+      </div>
 
       </div>
     </section><!-- End Get a Quote Section -->
 
   </main><!-- End #main -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
+
+  <script>
+
+    function signUp() {
+      event.preventDefault(); // Prevent the default form submission behavior
+      // Retrieve form input values
+      var first_name = $("#f_name").val();
+      var last_name = $("#l_name").val();
+      var mail = $("#mail").val();
+      var password = $("#password").val();
+
+      // Create the data object to send
+      var data = {
+        "method": "signup",
+        "first_name": first_name,
+        "last_name": last_name,
+        "mail": mail,
+        "password": password
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "Registration is successfully"
+            && responseObject.code == 200) {
+            var responseData = JSON.parse(response);
+            var token = responseData.token;
+
+            localStorage.setItem('token', token);
+
+            // Redirect to user-list.php
+            alert("Registered successfully");
+            window.location.href = "http://localhost/GlobalHubConnect/index.html";
+          } else {
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+    }
+
+
+
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -128,6 +189,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
 
 </body>
 
