@@ -353,6 +353,23 @@ section {
     color: #fff;
   }
 
+.navbar .Rent-Home,
+.navbar .Rent-Home:focus{
+  background-color: red;
+  width:5vw;
+  height:2vh;
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.navbar .Rent-Home:hover,
+.navbar .Rent-Home:focus:hover{
+  color: #fff;
+  background: #2756ff;
+}
+
   .navbar .get-a-quote:hover,
   .navbar .get-a-quote:focus:hover {
     color: #fff;
