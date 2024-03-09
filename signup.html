@@ -34,6 +34,14 @@
   <!--  Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
+
+  <!-- The below script tag is used for form validation and is specific to this file so dont remove it while making common
+  headers file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
+    integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -42,7 +50,8 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/contact-background-img.webp');">
+      <div class="page-header d-flex align-items-center"
+        style="background-image: url('assets/img/contact-background-img.webp');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -63,48 +72,51 @@
 
     <!-- ======= Get a Quote Section ======= -->
     <section id="get-a-quote" class="get-a-quote">
-      <div class="container align-items-center" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
 
         <div class="row">
 
           <!-- <div class="col-lg-5 quote-bg" style="background-image: url(assets/img/quote-bg.jpg);"></div> -->
 
-          <div class="col-6 mx-auto">
-            <form method="post">
+          <div class="col-lg-7 mx-auto">
+            <form id="signupForm" class=" php-email-form">
               <div class="row gy-4">
 
-                <div class="">
+                <div class="form-group">
                   <label for="firstname">First Name</label>
                   <input type="text" name="firstname" id="f_name" class="form-control" placeholder="First Name"
-                    required>
+                    data-parsley-pattern="^[a-zA-Z0-9]+$" data-parsley-required>
                 </div>
 
-                <div class="">
+                <div class="form-group">
                   <label for="lastname">Last Name</label>
-                  <input type="text" name="lastname" id="l_name" class=" form-control" placeholder="Last Name" required>
+                  <input type="text" name="lastname" id="l_name" class=" form-control" placeholder="Last Name"
+                    data-parsley-pattern="^[a-zA-Z0-9]+$" data-parsley-required>
                 </div>
 
-                <div class="">
+                <div class="form-group">
                   <label for="email">E-Mail</label>
-                  <input type="email" name="email" id="mail" class="form-control" placeholder="E mail" required>
+                  <input type="email" name="email" id="mail" class="form-control" placeholder="E mail"
+                    data-parsley-required>
                 </div>
 
-                <div class="">
+                <div class="form-group">
                   <label for="password">Password</label>
-                  <input type="password" name="password" class="form-control" placeholder="Password" required>
+                  <input type="password" name="password" id="password_check" class="form-control" placeholder="Password"
+                    minlength="6" data-parsley-required>
                 </div>
 
-                <div class="">
+                <div class="form-group">
                   <label for="confirmpassword">Confirm Password</label>
                   <input type="password" name="confirmpassword" id="password" class="form-control"
-                    placeholder="Confirm Password" required>
+                    placeholder="Confirm Password" data-parsley-equalto="#password_check" data-parsley-required>
                 </div>
 
-                <button class="btn btn-primary" id="signup" type="submit" onclick="signUp()">Signup</button>
+                <button class="btn btn-primary" id="signup">Signup</button>
               </div>
-
+            </form>
           </div>
-          </form>
+
         </div><!-- End Quote Form -->
 
       </div>
@@ -120,60 +132,73 @@
   <div id="preloader"></div>
 
   <script>
+    $(document).ready(function () {
 
-    function signUp() {
-      event.preventDefault(); // Prevent the default form submission behavior
-      // Retrieve form input values
-      var first_name = $("#f_name").val();
-      var last_name = $("#l_name").val();
-      var mail = $("#mail").val();
-      var password = $("#password").val();
+      $('#signup').click(function () {
+        event.preventDefault(); // Prevent the default form submission behavior
+        // Retrieve form input values
+        if ($('#signupForm').parsley().validate()) {
+          var first_name = $("#f_name").val();
+          var last_name = $("#l_name").val();
+          var mail = $("#mail").val();
+          var password = $("#password").val();
 
-      // Create the data object to send
-      var data = {
-        "method": "signup",
-        "first_name": first_name,
-        "last_name": last_name,
-        "mail": mail,
-        "password": password
-      };
-
-      var formData = new FormData();
-      formData.append('data', JSON.stringify(data));
-
-      $.ajax({
-        url: "http://localhost/GlobalHubConnect/api/v1/",
-        type: "POST",
-        data: formData,
-        processData: false, // Prevent jQuery from processing the data
-        contentType: false, // Prevent jQuery from automatically setting the content type
-
-        success: function (response) {
-          var responseObject = JSON.parse(response);
-
-          // Access the status property
-          var message = responseObject.message;
-
-          if (message === "Registration is successfully"
-            && responseObject.code == 200) {
-            var responseData = JSON.parse(response);
-            var token = responseData.token;
-
-            localStorage.setItem('token', token);
-
-            // Redirect to user-list.php
-            alert("Registered successfully");
-            window.location.href = "http://localhost/GlobalHubConnect/index.html";
-          } else {
-            console.log("error");
+          if (first_name == "" || last_name == "" || mail == "" || password == "") {
+            alert("Please fill out all fields");
+            return
           }
-        },
-        error: function (xhr, status, error) {
-          // Handle errors
-          console.error(error);
+
+          // Create the data object to send
+          var data = {
+            "method": "signup",
+            "first_name": first_name,
+            "last_name": last_name,
+            "mail": mail,
+            "password": password
+          };
+
+          var formData = new FormData();
+          formData.append('data', JSON.stringify(data));
+
+          $.ajax({
+            url: "http://localhost/GlobalHubConnect/api/v1/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from automatically setting the content type
+
+            success: function (response) {
+              var responseObject = JSON.parse(response);
+
+              // Access the status property
+              var message = responseObject.message;
+
+              if (message === "Registration is successfully"
+                && responseObject.code == 200) {
+                var responseData = JSON.parse(response);
+                var token = responseData.token;
+
+                localStorage.setItem('token', token);
+
+                // Redirect to user-list.php
+                alert("Registered successfully");
+                window.location.href = "http://localhost/GlobalHubConnect/index.html";
+              } else if (message === "This email is already register") {
+                alert("This email is already registered");
+              }
+              else {
+                console.log("error");
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle errors
+              console.error(error);
+            }
+          });
         }
-      });
-    }
+      })
+
+    })
 
 
 

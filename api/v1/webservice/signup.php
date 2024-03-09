@@ -11,22 +11,22 @@ class WebService extends GeneralClass
     public function signup()
     {
         $data = (object) $this->params;
-      
+
         $first_name = $this->requiredParameter($data, 'first_name', "first_name  is required");
         $last_name = $this->requiredParameter($data, 'last_name', "last_name  is required");
         $email = $this->requiredParameter($data, 'mail', "mail should not be empty");
         $password = $this->requiredParameter($data, 'password', "password should not be empty");
         $data = null;
 
-        // $get_email = $this->getEmail($email);
-        // if ($get_email) {
-        //     $ResponseData = array(
-        //         "message" => "This email is already register",
-        //         "code" => FAILED,
+        $get_email = $this->getEmail($email);
+        if ($get_email) {
+            $ResponseData = array(
+                "message" => "This email is already register",
+                "code" => FAILED,
 
-        //     );
-        //     $this->responseReturn($ResponseData);
-        // }
+            );
+            $this->responseReturn($ResponseData);
+        }
         // if (!$this->validatePassword($password)) {
         //     $ResponseData = array(
         //         "message" => "Password should not be less than 8 characters.",
@@ -52,14 +52,6 @@ class WebService extends GeneralClass
 
 
         $user_id = $this->db->insert('signup', $data);
-    
-        /* $sql = "INSERT INTO `login`.`users` (`email`, `password`, `signup_with`, `verification_code`, `device_id`, `device_type`, `created`, `updated`)
-        VALUES ($email, $password, $email, $verification_code, $device_id, $device_type, $datetime, $datetime)";
-        $stmt = $this->db->prepare($sql);
-        $stmt->bind_param("ssssssss", $email, $password, 'email', $verification_code, $device_id, $device_type, $datetime, $datetime);
-        $stmt->execute();
-        $user_id = $stmt->insert_id;
-        $stmt->close();*/
 
         if (!$user_id) {
             $ResponseData = array(
@@ -86,20 +78,10 @@ class WebService extends GeneralClass
         $this->responseReturn($ResponseData);
     }
 
-    function getPhone($phone)
-    {
-        $this->db->where("phone", $phone);
-        $result = $this->db->getOne("users", "id");
-        if (empty($result)) {
-            return false;
-        } else {
-            return $result;
-        }
-    }
     function getEmail($email)
     {
-        $this->db->where("email", $email);
-        $result = $this->db->getOne("users", "id");
+        $this->db->where("mail", $email);
+        $result = $this->db->getOne("signup", "id");
         if (empty($result)) {
             return false;
         } else {
