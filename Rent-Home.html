@@ -57,7 +57,7 @@
       height: auto;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: flex-start;
       gap: 15px;
       margin-left: 2vw;
       margin-top: 18vh;
@@ -95,6 +95,23 @@
       flex-wrap: wrap;
      /* flex-direction: row; */
       gap: 12px;
+    }
+
+    .address-th + td{
+      display: block;
+    flex-wrap: wrap;
+    width: 21vw;
+    height: 90px;
+    overflow-y: scroll;
+  
+    }
+    
+    .details-td{
+      display: block;
+    flex-wrap: wrap;
+    width: 21vw;
+    height: 90px;
+    overflow-y: scroll;
     }
   </style>
 
@@ -147,7 +164,7 @@
   <!-- Modal starts -->
   <div class="modal fade bd-example-modal-lg" id="addHomeModal" tabindex="-1" role="dialog"
     aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Fill House Details</h5>
@@ -222,6 +239,10 @@
               <input type="email" class="form-control" id="Email" data-parsley-required>
             </div>
             <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Rent-INR:</label>
+              <input type="number" class="form-control" id="Rent" data-parsley-required>
+            </div>
+            <div class="form-group">
               <label for="message-text" class="col-form-label">Details:</label>
               <textarea class="form-control" id="Details" data-parsley-required data-parsley-minlength=10></textarea>
             </div>
@@ -281,6 +302,7 @@
           var telephone = $("#Telephone").val();
           var email = $("#Email").val();
           var details = $("#Details").val();
+          var rent = $("#Rent").val();
 
 
           var cardHtml = `
@@ -312,7 +334,7 @@
                         <td>${duration}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Address</th>
+                        <th class="address-th" scope="row">Address</th>
                         <td>${address}</td>
                     </tr>
                     <tr>
@@ -324,8 +346,12 @@
                         <td>${email}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Details</th>
-                        <td>${details}</td>
+                        <th scope="row">Rent-INR</th>
+                        <td>${rent}</td>
+                    </tr>
+                    <tr>
+                        <th  scope="row">Details</th>
+                        <td class="details-td">${details}</td>
                     </tr>
                 </tbody>
             </table>
