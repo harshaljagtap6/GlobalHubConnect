@@ -123,7 +123,8 @@ class WebService extends GeneralClass
             'status' => $this->translate('STATUS_SUCCESS'),
             "code" => SUCCESS,
             "auth_token" => $auth_token,
-            "name" => $userLogin['first_name']
+            "name" => $userLogin['first_name'],
+            "id" => $userId
             // 'user_info' => $userinfo,
             // 'new_user' => $is_new_user
         );
