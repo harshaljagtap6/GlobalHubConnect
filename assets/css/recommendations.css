@@ -1,0 +1,165 @@
+.d-flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:20px;
+}
+.container_acc{
+    margin-top: 20vh;
+    width:90vw;
+    display:flex;
+    justify-content: center;
+    gap:40px;
+    flex-wrap: wrap;
+}
+.card_acc:hover{
+     transform: scale(1.02);
+}
+
+.nav-tabs{
+  margin-top:20vh ;
+}
+
+.nav-pills{
+    margin: 20px;
+    justify-content: center;
+    gap:35px;
+    
+}
+
+.breadcrumb-before::before{
+  position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    content: "";
+    z-index: -1;
+}
+
+.breadcrumb-area{
+  position: relative;
+    background-image: url(assets\img\recommendations-img\breadcrumb-area-img.webp);
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 159px 0 160px;
+    z-index: 10;
+}
+
+.breadcrumb-area-rights{
+    position: relative;
+      background-image: url('https://media.istockphoto.com/id/471648692/photo/canadian-law-and-justice-concept.jpg?s=612x612&w=0&k=20&c=jLfRWIG87kHir1i_DsbZn7daHp1MrTLqNOUPPUY5v1I=');
+      background-attachment: fixed;
+      background-position: center -110px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 159px 0 160px;
+      z-index: 10;     
+  }
+
+  .breadcrumb-area-accomodate{
+    position: relative;
+      background-image: url('https://media-cdn.tripadvisor.com/media/photo-s/13/1c/90/04/gundagai-tourist-accommodation.jpg');
+      background-attachment: fixed;
+      background-position: center 0px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 159px 0 160px;
+      z-index: 10;     
+  }
+
+.breadcrumb-area-jobs{
+    position: relative;
+      background-image: url('https://www.shutterstock.com/image-vector/minimal-we-hiring-background-job-260nw-1797898531.jpg');
+      background-attachment: fixed;
+      background-position: center ;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 159px 0 160px;
+      z-index: 10;
+  }
+
+  .breadcrumb-area-community{
+    position: relative;
+      background-image: url('https://media.istockphoto.com/id/1190692184/photo/latin-american-volunteers-working-hard-at-a-charity-construction-project.jpg?s=612x612&w=0&k=20&c=enYRR-R3g9TlKmCJnX4JeFTv7wZ8jwUD71HTY2R6khs=');
+      background-attachment: fixed;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 159px 0 160px;
+      z-index: 10;
+  }
+.breadcrumb-before .title{
+  position: relative;
+    display: block;
+    margin: 0 0 9px;
+}
+
+.breadcrumb-before .title h1{
+color: #fff;
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+
+
+  .row{
+    display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+  }
+
+.canada-visa-sec{
+  position: relative;
+    display: block;
+    background: #fff;
+    padding: 100px 0 50px;
+}
+
+
+.imp-links li {
+    list-style-type: '>>';
+    margin-top:20px;
+    padding-left: 12px;
+}
+
+li::marker {
+    color:red;  
+}
+ 
+.imp-links li a:hover{
+    color:grey;
+}
+
+p{
+    color:grey;
+}
+
+h5{
+
+}
+
+.content-ul li{
+    list-style-type: '*';
+    margin-top:15px;
+    padding-left: 12px;
+    color:grey;
+
+}
+
+.blue-marker li::marker{
+    color:blue;
+}
+
+.red-marker li::marker{
+    color:red;
+}

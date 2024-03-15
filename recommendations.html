@@ -31,44 +31,30 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-  <style>
-    .container_acc {
-      margin-top: 20vh;
-      width: 90vw;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+<style>
+.container_acc{
+    margin-top: 20vh;
+    width:90vw;
+    display:flex;
+    justify-content: center;
+    gap:40px;
+    flex-wrap: wrap;
+}
+.card_acc:hover{
+     transform: scale(1.02);
+}
 
-    .card_acc:hover {
-      transform: scale(1.02);
-    }
+.nav-tabs{
+  margin-top:20vh ;
+}
 
-    .nav-tabs {
-      margin-top: 20vh;
-    }
-
-    .nav-pills {
-      margin: 20px;
-      justify-content: center;
-      gap: 35px;
-
-    }
-
-    .dropdown-menu {
-      background-color: var(--color-secondary);
-      filter: opacity(0.8);
-      margin-top: -13.5px;
-      z-index: 1;
-      width: 100px;
-    }
-
-    .dropdown-item:hover {
-      font-size: 110%;
-      background-color: var(--color-secondary);
-    }
-  </style>
+.nav-pills{
+    margin: 20px;
+    justify-content: center;
+    gap:35px;
+    
+}
+</style>
 
 </head>
 
@@ -107,76 +93,63 @@
   <!-- End Header -->
 
   <!-- Country Header  -->
-  <nav>
+  <nav >
     <div class="nav nav-tabs" id="nav-tab" role="tablist" style=" padding: 0 5vw; ">
-      <button class="nav-link active" id="canada-tab-btn" data-bs-toggle="tab" data-bs-target="#canada-tab"
-        type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
-      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab"
-        aria-controls="USA-tab" aria-selected="false">USA</button>
-      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab"
-        aria-controls="UK-tab" aria-selected="false">UK</button>
+      <button class="nav-link active" id="canada-tab-btn" data-bs-toggle="tab" data-bs-target="#canada-tab" type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
+      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab" aria-controls="USA-tab" aria-selected="false">USA</button>
+      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab" aria-controls="UK-tab" aria-selected="false">UK</button>
     </div>
   </nav>
 
   <div class="tab-content" id="nav-tabContent">
-
+   
     <!-- Canada content begins  -->
-    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn"
-      tabindex="0">
-      <!-- Basic information Links  -->
+    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn" tabindex="0">    
+   <!-- Basic information Links  -->
 
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa"
-            type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate"
-            type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs"
-            type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community"
-            type="button" role="tab" aria-controls="canada-community" aria-selected="false">Community</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture"
-            type="button" role="tab" aria-controls="canada-culture" aria-selected="false">Cultural Adaption</button>
-        </li>
-      </ul>
+   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa" type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate" type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs" type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community" type="button" role="tab" aria-controls="canada-community" aria-selected="false" >Community</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture" type="button" role="tab" aria-controls="canada-culture" aria-selected="false" >Cultural Adaption</button>
+    </li>
+  </ul>
 
 
-      <!-- Tab content  -->
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab"
-          tabindex="0">
-          <h1> C Visa</h1>
-        </div>
-        <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab"
-          tabindex="0">
+   <!-- Tab content  -->
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab" tabindex="0">
+      <h1> C Visa</h1>
+    </div>
+    <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab" tabindex="0">
 
-          <h1> C accomodate</h1>
+      <h1> C accomodate</h1>
 
 
-        </div>
-        <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
-          <h1> C jobs</h1>
+    </div>
+    <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
+      <h1> C jobs</h1>
 
 
-        </div>
-        <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab"
-          tabindex="0">
-          <h1> C community</h1>
+    </div>
+    <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab" tabindex="0">
+      <h1> C community</h1>
 
 
-        </div>
-        <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab"
-          tabindex="0">
+    </div>
+    <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab" tabindex="0">
 
-          <h1> C culture</h1>
+      <h1> C culture</h1>
 
         </div>
 
@@ -187,30 +160,25 @@
     <!-- USA content begins  -->
     <div class="tab-pane fade" id="USA-tab" role="tabpanel" aria-labelledby="USA-tab-btn" tabindex="0">
 
-      <!-- Basic information Links  -->
-
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa"
-            type="button" role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate"
-            type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button"
-            role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community"
-            type="button" role="tab" aria-controls="USA-community" aria-selected="false">Community</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture"
-            type="button" role="tab" aria-controls="USA-culture" aria-selected="false">Cultural Adaption</button>
-        </li>
-      </ul>
+   <!-- Basic information Links  -->
+   
+   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa" type="button" role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate" type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button" role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community" type="button" role="tab" aria-controls="USA-community" aria-selected="false" >Community</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture" type="button" role="tab" aria-controls="USA-culture" aria-selected="false" >Cultural Adaption</button>
+    </li>
+  </ul>
 
 
       <!-- Tab content  -->
@@ -250,28 +218,23 @@
 
       <!-- Basic information Links  -->
 
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button"
-            role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate"
-            type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button"
-            role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community"
-            type="button" role="tab" aria-controls="UK-community" aria-selected="false">Community</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button"
-            role="tab" aria-controls="UK-culture" aria-selected="false">Cultural Adaption</button>
-        </li>
-      </ul>
+   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button" role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate" type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button" role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community" type="button" role="tab" aria-controls="UK-community" aria-selected="false" >Community</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button" role="tab" aria-controls="UK-culture" aria-selected="false" >Cultural Adaption</button>
+    </li>
+  </ul>
 
 
       <!-- Tab content  -->
