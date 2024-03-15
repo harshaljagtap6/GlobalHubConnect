@@ -375,7 +375,79 @@
               && responseObject.code == 200) {
 
               // Redirect to user-list.php
-              alert("added successfully");
+              // Iterate over the array of get_user objects
+              $.each(responseObject.get_user, function (index, user) {
+                // Extract properties from the current user object
+                var country = user.country;
+                var state = user.state;
+                var city = user.city;
+                var bhk = user.bhk;
+                var duration = user.duration;
+                var address = user.address;
+                var telephone = user.telephone;
+                var email = user.email;
+                var rent = user.rent;
+                var details = user.details;
+
+                // Generate HTML for the card using the extracted properties
+                var cardHtml = `
+        <div class="card shadow my-3">
+            <div class="card-header bg-primary text-white">
+                Details
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Country</th>
+                            <td>${country}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">State</th>
+                            <td>${state}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">City</th>
+                            <td>${city}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">BHK</th>
+                            <td>${bhk}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Duration</th>
+                            <td>${duration}</td>
+                        </tr>
+                        <tr>
+                            <th class="address-th" scope="row">Address</th>
+                            <td>${address}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Telephone</th>
+                            <td>${telephone}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td>${email}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rent-INR</th>
+                            <td>${rent}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Details</th>
+                            <td class="details-td">${details}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    `;
+
+                // Append the Bootstrap card to the desired div
+                $('.Homes-Status').append(cardHtml);
+              });
+
 
             }
             else {
@@ -389,7 +461,7 @@
         });
 
 
-      }, 2000); // 2000 milliseconds = 2 seconds
+      }, 200); // 2000 milliseconds = 2 seconds
 
 
       $('#submit-card').click(function () {
@@ -444,7 +516,7 @@
                 && responseObject.code == 200) {
 
                 // Redirect to user-list.php
-                alert("added successfully");
+                location.reload();
 
               }
               else {
@@ -516,53 +588,7 @@
 
           // Append the Bootstrap card to the desired div
           $('.Homes-Status').append(cardHtml);
-          // Create the data object to send
-          // var data = {
-          //   "method": "signup",
-          //   "first_name": first_name,
-          //   "last_name": last_name,
-          //   "mail": mail,
-          //   "password": password
-          // };
 
-          // var formData = new FormData();
-          // formData.append('data', JSON.stringify(data));
-
-          // $.ajax({
-          //   url: "http://localhost/GlobalHubConnect/api/v1/",
-          //   type: "POST",
-          //   data: formData,
-          //   processData: false, // Prevent jQuery from processing the data
-          //   contentType: false, // Prevent jQuery from automatically setting the content type
-
-          //   success: function (response) {
-          //     var responseObject = JSON.parse(response);
-
-          //     // Access the status property
-          //     var message = responseObject.message;
-
-          //     if (message === "Registration is successfully"
-          //       && responseObject.code == 200) {
-          //       var responseData = JSON.parse(response);
-          //       var token = responseData.token;
-
-          //       localStorage.setItem('token', token);
-
-          //       // Redirect to user-list.php
-          //       alert("Registered successfully");
-          //       window.location.href = "http://localhost/GlobalHubConnect/index.html";
-          //     } else if (message === "This email is already register") {
-          //       alert("This email is already registered");
-          //     }
-          //     else {
-          //       console.log("error");
-          //     }
-          //   },
-          //   error: function (xhr, status, error) {
-          //     // Handle errors
-          //     console.error(error);
-          //   }
-          // });
         }
       })
 
