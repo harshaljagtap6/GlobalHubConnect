@@ -18,7 +18,7 @@ class WebService extends GeneralClass
         );
 
         $this->db->where('id', $user_id);
-        if (!$this->db->update('users', $userData)) {
+        if (!$this->db->update('signup', $userData)) {
             $ResponseData = array(
                 "message" => "Something went wrong please try again!",
                 "code" => FAILED,

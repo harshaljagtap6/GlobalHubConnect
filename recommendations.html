@@ -19,7 +19,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -30,37 +31,52 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-<style>
-.container_acc{
-    margin-top: 20vh;
-    width:90vw;
-    display:flex;
-    justify-content: center;
-    gap:40px;
-    flex-wrap: wrap;
-}
-.card_acc:hover{
-     transform: scale(1.02);
-}
+  <style>
+    .container_acc {
+      margin-top: 20vh;
+      width: 90vw;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
 
-.nav-tabs{
-  margin-top:20vh ;
-}
+    .card_acc:hover {
+      transform: scale(1.02);
+    }
 
-.nav-pills{
-    margin: 20px;
-    justify-content: center;
-    gap:35px;
-    
-}
-</style>
+    .nav-tabs {
+      margin-top: 20vh;
+    }
+
+    .nav-pills {
+      margin: 20px;
+      justify-content: center;
+      gap: 35px;
+
+    }
+
+    .dropdown-menu {
+      background-color: var(--color-secondary);
+      filter: opacity(0.8);
+      margin-top: -13.5px;
+      z-index: 1;
+      width: 100px;
+    }
+
+    .dropdown-item:hover {
+      font-size: 110%;
+      background-color: var(--color-secondary);
+    }
+  </style>
 
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: rgba(14, 29, 52, 0.9);">
+  <header id="header" class="header d-flex align-items-center fixed-top"
+    style="background-color: rgba(14, 29, 52, 0.9);">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -76,11 +92,13 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li id="servicesNavItem" class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="signup.html">SignUp</a></li>
-          <li><a class="get-a-quote" href="login.html">Login</a></li>
+          <!-- <li><a class="get-a-quote" href="signup.html">SignUp</a></li>
+          <li><a class="get-a-quote" href="login.html">Login</a></li> -->
         </ul>
       </nav><!-- .navbar -->
 
@@ -89,181 +107,206 @@
   <!-- End Header -->
 
   <!-- Country Header  -->
-  <nav >
+  <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist" style=" padding: 0 5vw; ">
-      <button class="nav-link active" id="canada-tab-btn" data-bs-toggle="tab" data-bs-target="#canada-tab" type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
-      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab" aria-controls="USA-tab" aria-selected="false">USA</button>
-      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab" aria-controls="UK-tab" aria-selected="false">UK</button>
+      <button class="nav-link active" id="canada-tab-btn" data-bs-toggle="tab" data-bs-target="#canada-tab"
+        type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
+      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab"
+        aria-controls="USA-tab" aria-selected="false">USA</button>
+      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab"
+        aria-controls="UK-tab" aria-selected="false">UK</button>
     </div>
   </nav>
 
   <div class="tab-content" id="nav-tabContent">
-   
+
     <!-- Canada content begins  -->
-    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn" tabindex="0">    
-   <!-- Basic information Links  -->
+    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn"
+      tabindex="0">
+      <!-- Basic information Links  -->
 
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa" type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate" type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs" type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community" type="button" role="tab" aria-controls="canada-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture" type="button" role="tab" aria-controls="canada-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa"
+            type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate"
+            type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs"
+            type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community"
+            type="button" role="tab" aria-controls="canada-community" aria-selected="false">Community</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture"
+            type="button" role="tab" aria-controls="canada-culture" aria-selected="false">Cultural Adaption</button>
+        </li>
+      </ul>
 
 
-   <!-- Tab content  -->
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab" tabindex="0">
-      <h1> C Visa</h1>
+      <!-- Tab content  -->
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab"
+          tabindex="0">
+          <h1> C Visa</h1>
+        </div>
+        <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab"
+          tabindex="0">
+
+          <h1> C accomodate</h1>
+
+
+        </div>
+        <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
+          <h1> C jobs</h1>
+
+
+        </div>
+        <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab"
+          tabindex="0">
+          <h1> C community</h1>
+
+
+        </div>
+        <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab"
+          tabindex="0">
+
+          <h1> C culture</h1>
+
+        </div>
+
+      </div>
     </div>
-    <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab" tabindex="0">
 
-      <h1> C accomodate</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
-      <h1> C jobs</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab" tabindex="0">
-      <h1> C community</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab" tabindex="0">
-
-      <h1> C culture</h1>
-
-    </div>
-
-  </div>
-</div>
- 
 
     <!-- USA content begins  -->
     <div class="tab-pane fade" id="USA-tab" role="tabpanel" aria-labelledby="USA-tab-btn" tabindex="0">
 
-   <!-- Basic information Links  -->
-   
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa" type="button" role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate" type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button" role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community" type="button" role="tab" aria-controls="USA-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture" type="button" role="tab" aria-controls="USA-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
+      <!-- Basic information Links  -->
+
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa"
+            type="button" role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate"
+            type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button"
+            role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community"
+            type="button" role="tab" aria-controls="USA-community" aria-selected="false">Community</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture"
+            type="button" role="tab" aria-controls="USA-culture" aria-selected="false">Cultural Adaption</button>
+        </li>
+      </ul>
 
 
-   <!-- Tab content  -->
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="USA-visa" role="tabpanel" aria-labelledby="USA-visa-tab" tabindex="0">
-      <h1> C Visa</h1>
-    </div>
-    <div class="tab-pane fade" id="USA-accomodate" role="tabpanel" aria-labelledby="USA-accomodate-tab" tabindex="0">
+      <!-- Tab content  -->
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="USA-visa" role="tabpanel" aria-labelledby="USA-visa-tab"
+          tabindex="0">
+          <h1> C Visa</h1>
+        </div>
+        <div class="tab-pane fade" id="USA-accomodate" role="tabpanel" aria-labelledby="USA-accomodate-tab"
+          tabindex="0">
 
-      <h1> C accomodate</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="USA-jobs" role="tabpanel" aria-labelledby="USA-jobs-tab" tabindex="0">
-      <h1> C jobs</h1>
+          <h1> C accomodate</h1>
 
 
-    </div>
-    <div class="tab-pane fade" id="USA-community" role="tabpanel" aria-labelledby="USA-community-tab" tabindex="0">
-      <h1> C community</h1>
+        </div>
+        <div class="tab-pane fade" id="USA-jobs" role="tabpanel" aria-labelledby="USA-jobs-tab" tabindex="0">
+          <h1> C jobs</h1>
 
 
-    </div>
-    <div class="tab-pane fade" id="USA-culture" role="tabpanel" aria-labelledby="USA-culture-tab" tabindex="0">
+        </div>
+        <div class="tab-pane fade" id="USA-community" role="tabpanel" aria-labelledby="USA-community-tab" tabindex="0">
+          <h1> C community</h1>
 
-      <h1> USA culture</h1>
 
-    </div>
+        </div>
+        <div class="tab-pane fade" id="USA-culture" role="tabpanel" aria-labelledby="USA-culture-tab" tabindex="0">
 
-  </div>
+          <h1> USA culture</h1>
+
+        </div>
+
       </div>
+    </div>
 
-      <!-- UK content begins  -->
+    <!-- UK content begins  -->
     <div class="tab-pane fade" id="UK-tab" role="tabpanel" aria-labelledby="UK-tab-btn" tabindex="0">
 
-   <!-- Basic information Links  -->
+      <!-- Basic information Links  -->
 
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button" role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate" type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button" role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community" type="button" role="tab" aria-controls="UK-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button" role="tab" aria-controls="UK-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
-
-
-   <!-- Tab content  -->
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="UK-visa" role="tabpanel" aria-labelledby="UK-visa-tab" tabindex="0">
-      <h1> C Visa</h1>
-    </div>
-    <div class="tab-pane fade" id="UK-accomodate" role="tabpanel" aria-labelledby="UK-accomodate-tab" tabindex="0">
-
-      <h1> C accomodate</h1>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button"
+            role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate"
+            type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button"
+            role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community"
+            type="button" role="tab" aria-controls="UK-community" aria-selected="false">Community</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button"
+            role="tab" aria-controls="UK-culture" aria-selected="false">Cultural Adaption</button>
+        </li>
+      </ul>
 
 
-    </div>
-    <div class="tab-pane fade" id="UK-jobs" role="tabpanel" aria-labelledby="UK-jobs-tab" tabindex="0">
-      <h1> C jobs</h1>
+      <!-- Tab content  -->
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="UK-visa" role="tabpanel" aria-labelledby="UK-visa-tab" tabindex="0">
+          <h1> C Visa</h1>
+        </div>
+        <div class="tab-pane fade" id="UK-accomodate" role="tabpanel" aria-labelledby="UK-accomodate-tab" tabindex="0">
+
+          <h1> C accomodate</h1>
 
 
-    </div>
-    <div class="tab-pane fade" id="UK-community" role="tabpanel" aria-labelledby="UK-community-tab" tabindex="0">
-      <h1> C community</h1>
+        </div>
+        <div class="tab-pane fade" id="UK-jobs" role="tabpanel" aria-labelledby="UK-jobs-tab" tabindex="0">
+          <h1> C jobs</h1>
+
+
+        </div>
+        <div class="tab-pane fade" id="UK-community" role="tabpanel" aria-labelledby="UK-community-tab" tabindex="0">
+          <h1> C community</h1>
+
+        </div>
+        <div class="tab-pane fade" id="UK-culture" role="tabpanel" aria-labelledby="UK-culture-tab" tabindex="0">
+
+          <h1> UK culture</h1>
+
+        </div>
 
       </div>
-    <div class="tab-pane fade" id="UK-culture" role="tabpanel" aria-labelledby="UK-culture-tab" tabindex="0">
-
-      <h1> UK culture</h1>
-
     </div>
-
-  </div>
- </div>
   </div>
 
-  
+
   <!-- ======= Footer ======= -->
-    <!-- <footer id="footer" class="footer" >
+  <!-- <footer id="footer" class="footer" >
       
       <div class="container" >
         <div class="row gy-4">
@@ -315,8 +358,141 @@
     
   </footer> -->
   <!-- End Footer -->
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  </body>
-  </html>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <div id="user_id" style="display: none;"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      // Create the data object to send
+      accessToken = localStorage.getItem("token");
+
+      var data = {
+        "method": "check_login",
+        "token": accessToken,
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "access approved"
+            && responseObject.code == 200) {
+            var responseData = JSON.parse(response);
+
+            $("#user_id").text(responseData.user_id);
+            var logoutListItem = '<li><a class="get-a-quote" id="logout" onclick="logout()" href="#">Logout</a></li>';
+
+            // Insert the new list item after the "Contact" link
+            $("a[href='contact.html']").parent().after(logoutListItem);
+
+            // Add the classes "nav-item" and "dropdown" to #servicesNavItem
+            $("#servicesNavItem").addClass("nav-item dropdown");
+            // Replace the navigation item with a dropdown menu
+            $("#servicesNavItem").html(
+
+              '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" ' +
+              'aria-haspopup="true" aria-expanded="false">Services</a>' +
+              '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' +
+              '<a class="dropdown-item" style="color:white"  href="Rent-Home.html">Rent Home</a>' +
+              '<a class="dropdown-item" style="color:white"  href="Recruite.html">Recruite</a>' +
+              '</div>' +
+              '</li>'
+            );
+
+
+          }
+          else {
+            console.log("Error: " + responseObject);
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+    })
+
+    function logout() {
+
+      accessToken = localStorage.getItem("token");
+      localStorage.removeItem('token');
+
+      // Create the data object to send
+      var data = {
+        "method": "logout",
+        "token": accessToken
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "Logout successfully!"
+            && responseObject.code == 200) {
+
+            // Redirect to user-list.php
+            alert("Logged out successfully");
+            window.location.href = "http://localhost/GlobalHubConnect/login.html";
+          } else if (message === "Something went wrong please try again!") {
+            alert("Something went wrong please try again!")
+          }
+          else {
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+    }
+  </script>
+</body>
+
+</html>

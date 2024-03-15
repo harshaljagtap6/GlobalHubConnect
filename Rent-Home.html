@@ -97,21 +97,21 @@
       gap: 12px;
     }
 
-    .address-th + td{
+    .address-th+td {
       display: block;
-    flex-wrap: wrap;
-    width: 21vw;
-    height: 90px;
-    overflow-y: scroll;
-  
+      flex-wrap: wrap;
+      width: 21vw;
+      height: 90px;
+      overflow-y: scroll;
+
     }
-    
-    .details-td{
+
+    .details-td {
       display: block;
-    flex-wrap: wrap;
-    width: 21vw;
-    height: 90px;
-    overflow-y: scroll;
+      flex-wrap: wrap;
+      width: 21vw;
+      height: 90px;
+      overflow-y: scroll;
     }
   </style>
 
@@ -138,19 +138,11 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" style="color:white; " href="Rent-Home.html">Rent Home</a>
-              <a class="dropdown-item" style="color:white; " href="Recruite.html">Recruite</a>
-            </div>
+          <li id="servicesNavItem" class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="signup.html">Logout</a></li>
           <li> <button type="button" class="btn btn-info Add-Home" data-toggle="modal" data-target="#addHomeModal"><i
                 class="fa-solid fa-plus"></i></button>
           </li>
@@ -260,6 +252,7 @@
 
 
   <div class="Homes-Status"></div>
+  <div id="user_id" style="display: none;"></div>
 
 
   <!-- Vendor JS Files -->
@@ -271,6 +264,9 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
     integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
@@ -289,6 +285,113 @@
 
     $(document).ready(function () {
 
+
+      // Create the data object to send
+      accessToken = localStorage.getItem("token");
+
+      var data = {
+        "method": "check_login",
+        "token": accessToken,
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "access approved"
+            && responseObject.code == 200) {
+            var responseData = JSON.parse(response);
+
+            $("#user_id").text(responseData.user_id);
+            var logoutListItem = '<li><a class="get-a-quote" id="logout" onclick="logout()" href="#">Logout</a></li>';
+
+            // Insert the new list item after the "Contact" link
+            $("a[href='contact.html']").parent().after(logoutListItem);
+
+            // Add the classes "nav-item" and "dropdown" to #servicesNavItem
+            $("#servicesNavItem").addClass("nav-item dropdown");
+            // Replace the navigation item with a dropdown menu
+            $("#servicesNavItem").html(
+
+              '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" ' +
+              'aria-haspopup="true" aria-expanded="false">Services</a>' +
+              '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' +
+              '<a class="dropdown-item" style="color:white"  href="Rent-Home.html">Rent Home</a>' +
+              '<a class="dropdown-item" style="color:white"  href="Recruite.html">Recruite</a>' +
+              '</div>' +
+              '</li>'
+            );
+
+
+          }
+          else {
+            console.log("Error: " + responseObject);
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+      // Perform an action after a delay using jQuery
+      setTimeout(function () {
+        user_id = $("#user_id").text();
+        var data = {
+          "method": "get_rent_home",
+          "user_id": user_id
+        };
+
+        var formData = new FormData();
+        formData.append('data', JSON.stringify(data));
+
+        $.ajax({
+          url: "http://localhost/GlobalHubConnect/api/v1/",
+          type: "POST",
+          data: formData,
+          processData: false, // Prevent jQuery from processing the data
+          contentType: false, // Prevent jQuery from automatically setting the content type
+
+          success: function (response) {
+            var responseObject = JSON.parse(response);
+
+            // Access the status property
+            var message = responseObject.message;
+
+            if (message === "Found"
+              && responseObject.code == 200) {
+
+              // Redirect to user-list.php
+              alert("added successfully");
+
+            }
+            else {
+              console.log("error");
+            }
+          },
+          error: function (xhr, status, error) {
+            // Handle errors
+            console.error(error);
+          }
+        });
+
+
+      }, 2000); // 2000 milliseconds = 2 seconds
+
+
       $('#submit-card').click(function () {
         event.preventDefault(); // Prevent the default form submission behavior
         // Retrieve form input values
@@ -303,6 +406,56 @@
           var email = $("#Email").val();
           var details = $("#Details").val();
           var rent = $("#Rent").val();
+          var user_id = $("#user_id").text();
+
+
+          var data = {
+            "method": "add_home",
+            "country": country,
+            "state": state,
+            "city": city,
+            "bhk": bhk,
+            "duration": duration,
+            "address": address,
+            "telephone": telephone,
+            "email": email,
+            "details": details,
+            "rent": rent,
+            "user_id": user_id
+          };
+
+          var formData = new FormData();
+          formData.append('data', JSON.stringify(data));
+
+          $.ajax({
+            url: "http://localhost/GlobalHubConnect/api/v1/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from automatically setting the content type
+
+            success: function (response) {
+              var responseObject = JSON.parse(response);
+
+              // Access the status property
+              var message = responseObject.message;
+
+              if (message === "Registration is successfully"
+                && responseObject.code == 200) {
+
+                // Redirect to user-list.php
+                alert("added successfully");
+
+              }
+              else {
+                console.log("error");
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle errors
+              console.error(error);
+            }
+          });
 
 
           var cardHtml = `
@@ -416,6 +569,56 @@
     })
 
 
+    function logout() {
+
+      accessToken = localStorage.getItem("token");
+      localStorage.removeItem('token');
+
+      // Create the data object to send
+      var data = {
+        "method": "logout",
+        "token": accessToken
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "Logout successfully!"
+            && responseObject.code == 200) {
+
+            // Redirect to user-list.php
+            alert("Logged out successfully");
+            window.location.href = "http://localhost/GlobalHubConnect/login.html";
+          } else if (message === "Something went wrong please try again!") {
+            alert("Something went wrong please try again!")
+          }
+          else {
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+    }
+
+
+
 
 
 
@@ -446,6 +649,7 @@
 
     // })
   </script>
+
 </body>
 
 </html>
