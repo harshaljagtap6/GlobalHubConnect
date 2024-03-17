@@ -33,6 +33,14 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+
+
+  <!-- The below script tag is used for form validation and is specific to this file so dont remove it while making common
+  headers file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
+    integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -41,7 +49,8 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
-      <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/contact-background-img.webp');">
+      <div class="page-header d-flex align-items-center"
+        style="background-image: url('assets/img/contact-background-img.webp');">
         <div class="container position-relative">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-6 text-center">
@@ -66,19 +75,20 @@
 
         <div class="row">
           <div class="col-lg-7 mx-auto">
-            <form action="forms/quote.php" method="post" class="php-email-form">
+            <form id="login_form" method="post" class="php-email-form">
               <div class="row gy-4">
                 <div class="">
                   <label for="email">E-Mail</label>
-                  <input type="email" name="email" class="form-control" placeholder="E mail" id="login_email" required>
+                  <input type="email" name="email" class="form-control" placeholder="E mail" id="login_email"
+                    data-parsley-required>
                 </div>
 
                 <div class="">
                   <label for="password">Password</label>
                   <input type="password" name="password" class="form-control" placeholder="Password" id="login_password"
-                    required>
+                    data-parsley-required>
                 </div>
-                <button type="submit" onclick="login()">Login</button>
+                <button type="submit" id="login">Login</button>
               </div>
 
           </div>
@@ -98,60 +108,68 @@
   <div id="preloader"></div>
 
   <script>
-    function login() {
-      event.preventDefault(); // Prevent the default form submission behavior
-      // Retrieve form input values
-      var l_email = $("#login_email").val();
-      var l_password = $("#login_password").val();
+    $(document).ready(function () {
+      $('#login').click(function () {
 
-      // Create the data object to send
-      var data = {
-        "method": "login",
-        "email": l_email,
-        "password": l_password,
-      };
+        if ($('#login_form').parsley().validate()) {
+          event.preventDefault(); // Prevent the default form submission behavior
+          // Retrieve form input values
+          var l_email = $("#login_email").val();
+          var l_password = $("#login_password").val();
 
-      var formData = new FormData();
-      formData.append('data', JSON.stringify(data));
-
-      $.ajax({
-        url: "http://localhost/GlobalHubConnect/api/v1/",
-        type: "POST",
-        data: formData,
-        processData: false, // Prevent jQuery from processing the data
-        contentType: false, // Prevent jQuery from automatically setting the content type
-
-        success: function (response) {
-          var responseObject = JSON.parse(response);
-
-          // Access the status property
-          var message = responseObject.message;
-
-          if (message === "Login successfully"
-            && responseObject.code == 200) {
-            var responseData = JSON.parse(response);
-            var token = responseData.auth_token;
-
-            localStorage.setItem('token', token);
-
-            // Redirect to user-list.php
-            alert("Welcome" + " " + responseData.name);
-            window.location.href = "http://localhost/GlobalHubConnect/index.html";
-          } else if (message === "Your are not registered") {
-            alert("You are not registered")
-          } else if (message === "Email or password is incorrect. Please try again") {
-            alert(message)
+          if (l_email == "" || l_password == "") {
+            return
           }
-          else {
-            console.log("error");
-          }
-        },
-        error: function (xhr, status, error) {
-          // Handle errors
-          console.error(error);
+          // Create the data object to send
+          var data = {
+            "method": "login",
+            "email": l_email,
+            "password": l_password,
+          };
+
+          var formData = new FormData();
+          formData.append('data', JSON.stringify(data));
+
+          $.ajax({
+            url: "http://localhost/GlobalHubConnect/api/v1/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from automatically setting the content type
+
+            success: function (response) {
+              var responseObject = JSON.parse(response);
+
+              // Access the status property
+              var message = responseObject.message;
+
+              if (message === "Login successfully"
+                && responseObject.code == 200) {
+                var responseData = JSON.parse(response);
+                var token = responseData.auth_token;
+
+                localStorage.setItem('token', token);
+
+                // Redirect to user-list.php
+                alert("Welcome" + " " + responseData.name);
+                window.location.href = "http://localhost/GlobalHubConnect/welcome.php?username=" + responseData.name + "";
+              } else if (message === "Your are not registered") {
+                alert("You are not registered")
+              } else if (message === "Email or password is incorrect. Please try again") {
+                alert(message)
+              }
+              else {
+                console.log("error");
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle errors
+              console.error(error);
+            }
+          });
         }
-      });
-    }
+      })
+    })
   </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

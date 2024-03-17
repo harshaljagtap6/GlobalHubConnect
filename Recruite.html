@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>GHC -Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .dropdown-menu {
+      background-color: var(--color-secondary);
+      filter: opacity(0.8);
+      margin-top: -13.5px;
+      z-index: 1;
+      width: 100px;
+    }
+
+    .dropdown-item:hover {
+      font-size: 110%;
+      background-color: var(--color-secondary);
+    }
+
+    nav>ul {
+      display: flex;
+      float: left;
+      text-decoration: none;
+    }
+
+    .Homes-Status {
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 15px;
+      margin-left: 2vw;
+      margin-top: 18vh;
+    }
+
+    .Add-Home {
+      /* font-size: x-large; */
+      display: flex;
+      /* margin-top: 2vh; */
+      margin-left: 47%;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      /* background-color: var(--color-primary); */
+      border-radius: 15px 15px;
+      /* box-shadow: 5px 4px rgb(95, 107, 219); */
+    }
+
+    .Add-Home:hover {
+      transform: scale(105%);
+      transition-property: transform;
+      transition-duration: 0.1s;
+    }
+
+    .Add-card {
+      width: 40vw;
+      height: 50vh;
+      border: 1px solid black;
+      padding: 7px 7px;
+      background-color: black;
+      color: white;
+      /* display: flex;
+      flex-wrap: wrap;
+     /* flex-direction: row; */
+      gap: 12px;
+    }
+
+    textarea {
+      display: block;
+      height: 150px;
+    }
+
+    .desc {
+      display: block;
+      width: 86vw;
+    }
+
+    tr {
+      width: 12vw;
+    }
+
+    .apply-btn {
+
+      width: 170px;
+      height: 40px;
+
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top"
+    style="background-color: rgba(14, 29, 52, 0.9);">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo.png" alt="">
+        <h1><span style="color:green;">G</span>lobal<span style="color:brown;">H</span>ub<span
+            style="color:blue;">C</span>onnect</h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li id="servicesNavItem" class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li> <button type="button" class="btn btn-info Add-Home" data-toggle="modal" data-target="#addHomeModal"><i
+                class="fa-solid fa-plus"></i></button>
+          </li>
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+  <!-- Modal starts -->
+  <div class="modal fade bd-example-modal-lg" id="addHomeModal" tabindex="-1" role="dialog"
+    aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Fill Job Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="submitCardForm">
+            <div class="form-group">
+
+              <div class="form-group">
+                <label for="jobTitle" class="col-form-label">Job Title:</label>
+                <input type="text" class="form-control" id="jobTitle" data-parsley-required>
+              </div>
+
+              <div class="form-group">
+                <label for="jobDesc" class="col-form-label">Job Description:</label>
+                <textarea class="form-control" id="jobDesc" data-parsley-required data-parsley-minlength=10></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="companyDesc" class="col-form-label">Company Information:</label>
+                <textarea class="form-control" id="companyDesc" data-parsley-required
+                  data-parsley-minlength=10></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="Location" class="col-form-label">Location:</label>
+                <input type="text" class="form-control" id="Location" data-parsley-required>
+              </div>
+
+              <div class="form-group">
+                <label for="Salary" class="col-form-label">Salary and Benefits:</label>
+                <input type="text" class="form-control" id="Salary" data-parsley-required>
+              </div>
+
+              <div class="form-group">
+                <label for="Qualification" class="col-form-label">Qualification and Requirements:</label>
+                <textarea class="form-control" id="Qualification" data-parsley-required
+                  data-parsley-minlength=10></textarea>
+              </div>
+
+              <select class="form-select mb-3" name="Experience" id="Experience" data-parsley-required
+                data-parsley-error-message="Please select the Experience tenure">
+                <option value="">Work Experience</option>
+                <option value="1-3 Months">Fresher</option>
+                <option value="3-6 Months">0-1 year</option>
+                <option value="6-9 Months">0-2 year</option>
+                <option value="9-12 Months">2+ year</option>
+              </select>
+
+              <div class="form-group">
+                <label for="Due" class="col-form-label">Application Deadline:</label>
+                <input type="date" class="form-control" id="Due" data-parsley-required>
+              </div>
+
+              <div class="form-group">
+                <label for="How-to-apply" class="col-form-label">How to Apply:</label>
+                <textarea class="form-control" id="How-to-apply" data-parsley-required
+                  data-parsley-minlength=10></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="Email" class="col-form-label">Email:</label>
+                <input type="email" class="form-control" id="Email" data-parsley-required>
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="countryCode" class="col-form-label">Telephone</label>
+              <div class="input-group">
+
+                <select name="countryCode" id="countryCode" class="form-control" data-parsley-required
+                  data-parsley-trigger="change" data-parsley-error-message="Please select a country code">
+                  <option value="">Select Country Code</option>
+                  <option value="+1">United States (+1)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+44">United Kingdom (+44)</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <input type="tel" class="form-control" id="Telephone" data-parsley-required data-parsley-type="digits"
+                  data-parsley-length="[10, 10]" data-parsley-error-message="Please enter a 10-digit phone number">
+              </div>
+              <!-- <label for="recipient-name" class="col-form-label">Telephone</label>
+              <input type="tel" class="form-control" id="Telephone" data-parsley-required data-parsley-type="number"> -->
+            </div>
+
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" id="submit-card" class="btn btn-primary">Post Job</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Modal ends -->
+
+
+  <div class="Homes-Status"></div>
+  <div id="user_id" style="display: none;"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"
+    integrity="sha512-eyHL1atYNycXNXZMDndxrDhNAegH2BDWt1TmkXJPoGf1WLlNYt08CSjkqF5lnCRmdm3IrkHid8s2jOUY4NIZVQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+  <script>
+    $(document).ready(function () {
+
+      // Create the data object to send
+      accessToken = localStorage.getItem("token");
+
+      var data = {
+        "method": "check_login",
+        "token": accessToken,
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "access approved"
+            && responseObject.code == 200) {
+            var responseData = JSON.parse(response);
+
+            $("#user_id").text(responseData.user_id);
+            var logoutListItem = '<li><a class="get-a-quote" id="logout" onclick="logout()" href="#">Logout</a></li>';
+
+            // Insert the new list item after the "Contact" link
+            $("a[href='contact.html']").parent().after(logoutListItem);
+
+            // Add the classes "nav-item" and "dropdown" to #servicesNavItem
+            $("#servicesNavItem").addClass("nav-item dropdown");
+            // Replace the navigation item with a dropdown menu
+            $("#servicesNavItem").html(
+
+              '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" ' +
+              'aria-haspopup="true" aria-expanded="false">Services</a>' +
+              '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' +
+              '<a class="dropdown-item" style="color:white"  href="Rent-Home.html">Rent Home</a>' +
+              '<a class="dropdown-item" style="color:white"  href="Recruite.html">Recruite</a>' +
+              '</div>' +
+              '</li>'
+            );
+
+
+          }
+          else {
+            console.log("Error: " + responseObject);
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+
+      setTimeout(function () {
+        user_id = $("#user_id").text();
+        var data = {
+          "method": "get_recruite",
+          "user_id": user_id
+        };
+
+        var formData = new FormData();
+        formData.append('data', JSON.stringify(data));
+
+        $.ajax({
+          url: "http://localhost/GlobalHubConnect/api/v1/",
+          type: "POST",
+          data: formData,
+          processData: false, // Prevent jQuery from processing the data
+          contentType: false, // Prevent jQuery from automatically setting the content type
+
+          success: function (response) {
+            var responseObject = JSON.parse(response);
+
+            // Access the status property
+            var message = responseObject.message;
+
+            if (message === "Found"
+              && responseObject.code == 200) {
+
+              // Iterate over the array of get_user objects
+              $.each(responseObject.get_user, function (index, user) {
+                // Extract user data
+                var jobTitle = user.jobTitle;
+                var jobDesc = user.jobDesc;
+                var companyDesc = user.companyDesc; // Assuming companyDesc is available in your response
+                var location = user.location;
+                var salary = user.salary;
+                var qualification = user.qualification;
+                var experience = user.experience;
+                var due = user.due;
+                var apply = user.apply;
+                var email = user.email;
+                var countryCode = user.countryCode;
+                var telephone = user.telephone;
+
+                // Generate card HTML
+                var cardHtml = `
+    <div class="card shadow my-3" style="width:96vw;">
+        <div class="card-header bg-primary text-white" style="width:96vw;">
+            Details
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Job Title</th>
+                        <td>${jobTitle}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Job Description</th>
+                        <td class="desc">${jobDesc}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Company Details</th>
+                        <td class="desc">${companyDesc}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Location</th>
+                        <td>${location}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Salary and Benefits</th>
+                        <td>${salary}</td>
+                    </tr>
+                    <tr>
+                        <th class="address-th" scope="row">Qualifications and Requirements</th>
+                        <td class="desc">${qualification}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Work Experience</th>
+                        <td>${experience}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Application Deadline</th>
+                        <td>${due}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">How-to-Apply</th>
+                        <td class="desc">${apply}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>${email}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contact</th>
+                        <td>${countryCode} ${telephone}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="apply-btn btn btn-primary">Apply Now</button>
+        </div>
+    </div>
+    `;
+
+                // Append the Bootstrap card to the desired div
+                $('.Homes-Status').append(cardHtml);
+              });
+
+
+            }
+            else {
+              console.log("error");
+            }
+          },
+          error: function (xhr, status, error) {
+            // Handle errors
+            console.error(error);
+          }
+        });
+
+
+      }, 200); // 2000 milliseconds = 2 seconds
+
+
+
+
+
+      $('#submit-card').click(function () {
+        event.preventDefault(); // Prevent the default form submission behavior
+        // Retrieve form input values
+        if ($('#submitCardForm').parsley().validate()) {
+          var jobTitle = $("#jobTitle").val();
+          var jobDesc = $("#jobDesc").val();
+          var companyDesc = $("#companyDesc").val();
+          var location = $("#Location").val();
+          var salary = $("#Salary").val();
+          var qualification = $("#Qualification").val();
+          var experience = $("#Experience").val();
+          var due = $("#Due").val();
+          var apply = $("#How-to-apply").val();
+          var email = $("#Email").val();
+          var countryCode = $("#countryCode").val();
+          var telephone = $("#Telephone").val();
+          var user_id = $("#user_id").text();
+
+
+
+          var data = {
+            "method": "add_recruite",
+            "jobTitle": jobTitle,
+            "jobDesc": jobDesc,
+            "companyDesc": companyDesc,
+            "location": location,
+            "salary": salary,
+            "qualification": qualification,
+            "experience": experience,
+            "due": due,
+            "apply": apply,
+            "email": email,
+            "countryCode": countryCode,
+            "telephone": telephone,
+            "user_id": user_id
+          };
+
+          var formData = new FormData();
+          formData.append('data', JSON.stringify(data));
+
+          $.ajax({
+            url: "http://localhost/GlobalHubConnect/api/v1/",
+            type: "POST",
+            data: formData,
+            processData: false, // Prevent jQuery from processing the data
+            contentType: false, // Prevent jQuery from automatically setting the content type
+
+            success: function (response) {
+              var responseObject = JSON.parse(response);
+
+              // Access the status property
+              var message = responseObject.message;
+
+              if (message === "Registration is successfully"
+                && responseObject.code == 200) {
+
+                // Redirect to user-list.php
+                location.reload();
+
+              }
+              else {
+                console.log("error");
+              }
+            },
+            error: function (xhr, status, error) {
+              // Handle errors
+              console.error(error);
+            }
+          });
+
+          var cardHtml = `
+    <div class="card shadow my-3" style="width:96vw;">
+        <div class="card-header bg-primary text-white" style="width:96vw;">
+            Details
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Job Title</th>
+                        <td>${jobTitle}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Job Description</th>
+                        <td class="desc">${jobDesc}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Company Details</th>
+                        <td class="desc">${companyDesc}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Location</th>
+                        <td>${location}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Salary and Benefits</th>
+                        <td>${salary}</td>
+                    </tr>
+                    <tr>
+                        <th class="address-th" scope="row">Qualifications and Requirements</th>
+                        <td class="desc">${qualification}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Work Experience</th>
+                        <td>${experience}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Application Deadline</th>
+                        <td>${due}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">How-to-Apply</th>
+                        <td class="desc">${apply}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>${email}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contact</th>
+                        <td>${countryCode} ${telephone}</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <button class="apply-btn btn btn-primary" >Apply</button>
+        </div>
+    </div>
+`;
+
+
+
+          // Append the Bootstrap card to the desired div
+          $('.Homes-Status').append(cardHtml);
+
+        }
+      })
+
+    })
+
+    function logout() {
+
+      accessToken = localStorage.getItem("token");
+      localStorage.removeItem('token');
+
+      // Create the data object to send
+      var data = {
+        "method": "logout",
+        "token": accessToken
+      };
+
+      var formData = new FormData();
+      formData.append('data', JSON.stringify(data));
+
+      $.ajax({
+        url: "http://localhost/GlobalHubConnect/api/v1/",
+        type: "POST",
+        data: formData,
+        processData: false, // Prevent jQuery from processing the data
+        contentType: false, // Prevent jQuery from automatically setting the content type
+
+        success: function (response) {
+          var responseObject = JSON.parse(response);
+
+          // Access the status property
+          var message = responseObject.message;
+
+          if (message === "Logout successfully!"
+            && responseObject.code == 200) {
+
+            // Redirect to user-list.php
+            alert("Logged out successfully");
+            window.location.href = "http://localhost/GlobalHubConnect/login.html";
+          } else if (message === "Something went wrong please try again!") {
+            alert("Something went wrong please try again!")
+          }
+          else {
+            console.log("error");
+          }
+        },
+        error: function (xhr, status, error) {
+          // Handle errors
+          console.error(error);
+        }
+      });
+
+
+
+    }
+  </script>
+</body>
+
+</html>

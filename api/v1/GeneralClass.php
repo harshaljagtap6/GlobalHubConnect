@@ -61,8 +61,8 @@ class GeneralClass
     function verifyToken($token)
     {
         $this->db->where("auth_token", $token);
-        $this->db->where("active", 'yes');
-        $result = $this->db->getOne("users", "id");
+        // $this->db->where("active", 'yes');
+        $result = $this->db->getOne("signup", "id");
         
         if (empty($result)) {
             return false;
