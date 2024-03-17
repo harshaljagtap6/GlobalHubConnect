@@ -97,129 +97,9 @@
 
   <!-- container containing accomodation cards -->
   <div class="container_acc">
+    <!-- <div class="rentHomeData" id="rentHomeData"></div> -->
     <!-- 1 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-    <!-- 2 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-    <!-- 3 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-
-    <!-- 1 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-    <!-- 2 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-    <!-- 3 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="card card_acc" style="width: 18rem;">
-      <img src="assets/img/accomodation1.webp" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Appolo apartment</h5>
-        <p class="card-text">
-        <ul>
-          <li>2 Bedroom</li>
-          <li>1 Kitchen</li>
-          <li>Free-wifi</li>
-        </ul>
-        </p>
-        <a href="#" style="width:100%; " class="btn btn-primary">Deal</a>
-      </div>
-    </div>
+    
   </div>
   <!-- End of container_acc  -->
 
@@ -292,23 +172,16 @@
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 
-
-
   <script>
-    $(document).ready(function () {
 
-      // Create the data object to send
-      accessToken = localStorage.getItem("token");
-
-      var data = {
-        "method": "check_login",
-        "token": accessToken,
-      };
+var data = {
+        "method": "get_all_rent_home",
+            };
 
       var formData = new FormData();
       formData.append('data', JSON.stringify(data));
 
-      $.ajax({
+  $.ajax({
         url: "http://localhost/GlobalHubConnect/api/v1/",
         type: "POST",
         data: formData,
@@ -317,96 +190,53 @@
 
         success: function (response) {
           var responseObject = JSON.parse(response);
-
-          // Access the status property
           var message = responseObject.message;
-
-          if (message === "access approved"
+          if (message === "Rental homes found"
             && responseObject.code == 200) {
-            var responseData = JSON.parse(response);
-
-            $("#user_id").text(responseData.user_id);
-            var logoutListItem = '<li><a class="get-a-quote" id="logout" onclick="logout()" href="#">Logout</a></li>';
-
-            // Insert the new list item after the "Contact" link
-            $("a[href='contact.html']").parent().after(logoutListItem);
-
-            // Add the classes "nav-item" and "dropdown" to #servicesNavItem
-            $("#servicesNavItem").addClass("nav-item dropdown");
-            // Replace the navigation item with a dropdown menu
-            $("#servicesNavItem").html(
-
-              '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" ' +
-              'aria-haspopup="true" aria-expanded="false">Services</a>' +
-              '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' +
-              '<a class="dropdown-item" style="color:white"  href="Rent-Home.html">Rent Home</a>' +
-              '<a class="dropdown-item" style="color:white"  href="Recruite.html">Recruite</a>' +
-              '</div>' +
-              '</li>'
-            );
-
-
-          }
-          else {
-            console.log("Error: " + responseObject);
-            console.log("error");
-          }
+                var responseData = JSON.parse(response);
+                displayRentHomeData(responseData.rental_homes);
+            } else {
+                console.error("Error:", responseData.message);
+            }
         },
-        error: function (xhr, status, error) {
-          // Handle errors
-          console.error(error);
+        error: function(xhr, status, error) {
+            console.error("Error:", error);
         }
-      });
+    });
 
-    })
+function displayRentHomeData(rentHomeData) {
+    var rentHomeHTML = "";
+    
+    // LOOP start
+    $.each(rentHomeData, function(index, rentHome) {
+      rentHomeHTML += '<div class="card card_acc" style="width: 18rem;">';
+      rentHomeHTML += '<div class="card-body">';
+      rentHomeHTML += '<h5 class="card-title">Apartment Name</h5>';
+      rentHomeHTML += '<p class="card-text">';
+      rentHomeHTML += '<ul>';
+      rentHomeHTML += '<li>Country: ' + rentHome.country + '</li>';
+      rentHomeHTML += '<li>State: ' + rentHome.state + '</li>';
+      rentHomeHTML += '<li>City: ' + rentHome.city + '</li>';
+      rentHomeHTML += '<li>Rooms: ' + rentHome.bhk + '</li>';
+      rentHomeHTML += '<li>Rent: ' + rentHome.rent + '</li>';
+      rentHomeHTML += '</ul>';
+      rentHomeHTML += '</p>';
+      rentHomeHTML += '<a href="#" style="width:100%; " class="btn btn-primary">Deal</a>';
+      rentHomeHTML += '</div>';
+      rentHomeHTML += '</div>';
+    });
 
-    function logout() {
 
-      accessToken = localStorage.getItem("token");
-      localStorage.removeItem('token');
+    // $.each(rentHomeData, function(index, rentHome) {
+    //     rentHomeHTML += "<tr>";
+    //     rentHomeHTML += "<td>" + rentHome.country + "</td>";
+    //     rentHomeHTML += "<td>" + rentHome.state + "</td>";
+    //     rentHomeHTML += "</tr>";
+    // });
 
-      // Create the data object to send
-      var data = {
-        "method": "logout",
-        "token": accessToken
-      };
-
-      var formData = new FormData();
-      formData.append('data', JSON.stringify(data));
-
-      $.ajax({
-        url: "http://localhost/GlobalHubConnect/api/v1/",
-        type: "POST",
-        data: formData,
-        processData: false, // Prevent jQuery from processing the data
-        contentType: false, // Prevent jQuery from automatically setting the content type
-
-        success: function (response) {
-          var responseObject = JSON.parse(response);
-
-          // Access the status property
-          var message = responseObject.message;
-
-          if (message === "Logout successfully!"
-            && responseObject.code == 200) {
-
-            // Redirect to user-list.php
-            alert("Logged out successfully");
-            window.location.href = "http://localhost/GlobalHubConnect/login.html";
-          } else if (message === "Something went wrong please try again!") {
-            alert("Something went wrong please try again!")
-          }
-          else {
-            console.log("error");
-          }
-        },
-        error: function (xhr, status, error) {
-          // Handle errors
-          console.error(error);
-        }
-      });
-
-    }
+    // rentHomeHTML += "</table>";
+    $(".container_acc").html(rentHomeHTML);
+}
   </script>
 
 
