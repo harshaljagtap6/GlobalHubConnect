@@ -31,30 +31,23 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-<style>
-.container_acc{
-    margin-top: 20vh;
-    width:90vw;
-    display:flex;
-    justify-content: center;
-    gap:40px;
-    flex-wrap: wrap;
-}
-.card_acc:hover{
-     transform: scale(1.02);
-}
+  <link rel="stylesheet" href="assets/css/recommendations.css">
+  <style>
+    .breadcrumb-area {
+      position: relative;
+      background-image: url(assets/img/recommendations-img/breadcrumb-area-img.webp);
+      background-attachment: fixed;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 159px 0 160px;
+      z-index: 10;
+    }
 
-.nav-tabs{
-  margin-top:20vh ;
-}
-
-.nav-pills{
-    margin: 20px;
-    justify-content: center;
-    gap:35px;
-    
-}
-</style>
+    .imp-links>ul>li {
+      list-style-type: decimal;
+    }
+  </style>
 
 </head>
 
@@ -78,9 +71,7 @@
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li id="servicesNavItem" class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
           <!-- <li><a class="get-a-quote" href="signup.html">SignUp</a></li>
@@ -93,178 +84,746 @@
   <!-- End Header -->
 
   <!-- Country Header  -->
-  <nav >
-    <div class="nav nav-tabs" id="nav-tab" role="tablist" style=" padding: 0 5vw; ">
-      <button class="nav-link active" id="canada-tab-btn" data-bs-toggle="tab" data-bs-target="#canada-tab" type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
-      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab" aria-controls="USA-tab" aria-selected="false">USA</button>
-      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab" aria-controls="UK-tab" aria-selected="false">UK</button>
+  <nav style="background-color: rgb(14 29 52 / 90%);margin-top: -21px;
+  padding-top: 21px;">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist" style=" padding: 0 5vw;  ">
+      <button class="nav-link active " id="canada-tab-btn " data-bs-toggle="tab" data-bs-target="#canada-tab"
+        type="button" role="tab" aria-controls="canada-tab" aria-selected="true">Canada</button>
+      <button class="nav-link" id="USA-tab-btn" data-bs-toggle="tab" data-bs-target="#USA-tab" type="button" role="tab"
+        aria-controls="USA-tab" aria-selected="false">USA</button>
+      <button class="nav-link" id="UK-tab-btn" data-bs-toggle="tab" data-bs-target="#UK-tab" type="button" role="tab"
+        aria-controls="UK-tab" aria-selected="false">UK</button>
     </div>
   </nav>
 
-  <div class="tab-content" id="nav-tabContent">
-   
+  <div class="tab-content" id="nav-tabContent" style="margin-top:0.5px;">
+
     <!-- Canada content begins  -->
-    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn" tabindex="0">    
-   <!-- Basic information Links  -->
-
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa" type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate" type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs" type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community" type="button" role="tab" aria-controls="canada-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture" type="button" role="tab" aria-controls="canada-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
-
-
-   <!-- Tab content  -->
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab" tabindex="0">
-      <h1> C Visa</h1>
-    </div>
-    <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab" tabindex="0">
-
-      <h1> C accomodate</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
-      <h1> C jobs</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab" tabindex="0">
-      <h1> C community</h1>
-
-
-    </div>
-    <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab" tabindex="0">
-
-      <h1> C culture</h1>
-
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- USA content begins  -->
-    <div class="tab-pane fade" id="USA-tab" role="tabpanel" aria-labelledby="USA-tab-btn" tabindex="0">
-
-   <!-- Basic information Links  -->
-   
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa" type="button" role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate" type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button" role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community" type="button" role="tab" aria-controls="USA-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture" type="button" role="tab" aria-controls="USA-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
-
-
-      <!-- Tab content  -->
-      <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="USA-visa" role="tabpanel" aria-labelledby="USA-visa-tab"
-          tabindex="0">
-          <h1> C Visa</h1>
-        </div>
-        <div class="tab-pane fade" id="USA-accomodate" role="tabpanel" aria-labelledby="USA-accomodate-tab"
-          tabindex="0">
-
-          <h1> C accomodate</h1>
-
-
-        </div>
-        <div class="tab-pane fade" id="USA-jobs" role="tabpanel" aria-labelledby="USA-jobs-tab" tabindex="0">
-          <h1> C jobs</h1>
-
-
-        </div>
-        <div class="tab-pane fade" id="USA-community" role="tabpanel" aria-labelledby="USA-community-tab" tabindex="0">
-          <h1> C community</h1>
-
-
-        </div>
-        <div class="tab-pane fade" id="USA-culture" role="tabpanel" aria-labelledby="USA-culture-tab" tabindex="0">
-
-          <h1> USA culture</h1>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- UK content begins  -->
-    <div class="tab-pane fade" id="UK-tab" role="tabpanel" aria-labelledby="UK-tab-btn" tabindex="0">
-
+    <div class="tab-pane fade show active" id="canada-tab" role="tabpanel" aria-labelledby="canada-tab-btn" tabindex="0"
+      style="background-color: rgb(14 29 52 / 90%); padding-top:1px;">
       <!-- Basic information Links  -->
 
-   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button" role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate" type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button" role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community" type="button" role="tab" aria-controls="UK-community" aria-selected="false" >Community</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button" role="tab" aria-controls="UK-culture" aria-selected="false" >Cultural Adaption</button>
-    </li>
-  </ul>
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="canada-visa-tab" data-bs-toggle="pill" data-bs-target="#canada-visa"
+            type="button" role="tab" aria-controls="canada-visa" aria-selected="true">Visa and Immigration</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-accomodate-tab" data-bs-toggle="pill" data-bs-target="#canada-accomodate"
+            type="button" role="tab" aria-controls="canada-accomodate" aria-selected="false">Accomodation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-jobs-tab" data-bs-toggle="pill" data-bs-target="#canada-jobs"
+            type="button" role="tab" aria-controls="canada-jobs" aria-selected="false">Jobs</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-community-tab" data-bs-toggle="pill" data-bs-target="#canada-community"
+            type="button" role="tab" aria-controls="canada-community" aria-selected="false">Community</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="canada-culture-tab" data-bs-toggle="pill" data-bs-target="#canada-culture"
+            type="button" role="tab" aria-controls="canada-culture" aria-selected="false">Legal Practice and
+            Rights</button>
+        </li>
+      </ul>
 
 
       <!-- Tab content  -->
       <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="UK-visa" role="tabpanel" aria-labelledby="UK-visa-tab" tabindex="0">
-          <h1> C Visa</h1>
+        <div class="tab-pane fade show active" id="canada-visa" role="tabpanel" aria-labelledby="canada-visa-tab"
+          tabindex="0">
+
+          <!-- Canada student visa  -->
+
+          <!-- background - img -title  -->
+          <section class="breadcrumb-area breadcrumb-before">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="inner-text text-center clearfix">
+                    <div class="title wow slideInUp animated animated" data-wow-delay="0.3s" data-wow-duration="1500ms"
+                      style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: slideInUp;">
+                      <h1>Canada Student Visa Information</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- inner content  -->
+
+          <section class="canada-visa-sec">
+            <div class="container">
+              <div class="row">
+
+                <!-- Left column  -->
+
+                <div class="col-xl-8 col-lg-8 col-md-12 red-marker">
+                  <h3 class="text-danger"> What is Canada Student Visa? </h3>
+                  <p class="my-3">
+                    A Canadian student visa is one of the major prerequisites for a person to start his/her studies in
+                    Canada.
+                    Canada student visa is a combination of Canada Visitor Visa and study permit Or An electronic Travel
+                    Authorization (eTA)
+                    and study permit.
+                  </p>
+
+                  <h3 class="text-danger" style="margin-top:35px;"> What can you do with canada student visa? </h3>
+                  <ul class="content-ul my-3 ">
+                    <p>A Canada student visa holder can</p>
+                    <li>Start his/her studies in Canada.</li>
+                    <li>Stay in Canada until the study programme enrolled ends.</li>
+                    <li>Work (in some cases) while studying.</li>
+                    <li>Work after graduation.</li>
+                  </ul>
+
+                  <h3 class="text-danger" style="margin-top:35px;"> Benefits of Canada Student Visa </h3>
+                  <ul class="content-ul my-3 ">
+                    <p>Certain benefits are associated with the Canada Student Visa.</p>
+                    <li>You become eligible for certain health benefits</li>
+                    <li>Helps to easily get the Canadian issued documents.</li>
+                    <li>You can easily get Canadian citizenship, however, you have to fulfill other eligibility criteria
+                      as well.</li>
+                  </ul>
+
+                  <h3 class="text-danger" style="margin-top:35px;"> What are the eligibility criteria for a Canadian
+                    Student Visa? </h3>
+                  <ul class="content-ul my-3 ">
+                    <p>Following conditions need to be fulfilled to be eligible for a Canadian Student Visa:-.</p>
+                    <li>A valid acceptance letter from a Designated Learning Institute (DLI) containing</li>
+                    <li>He/she must be at least 18 years of age.</li>
+                    <li>Court documents stating the clean criminal history of the applicant.</li>
+                    <li>Copies of current immigration status in Canada. </li>
+                    <li>Proof of temporary study in Canada also states that you will return to your home country once
+                      your studies are over. </li>
+                  </ul>
+
+                </div>
+
+                <!-- right coloumn  -->
+
+                <div class="col-xl-4 col-lg-4 col-md-12 red-marker">
+                  <img class="px-4" src="assets/img/recommendations-img/canada-visa-img.jpeg" alt="wait">
+                  <div class=" container ">
+                    <h6 class="text-primary my-4">LET’S KNOW ABOUT CANADA STUDENT VISA</h6>
+                    <p>According to Canada Immigration consultants, Canada is not only popular as a favourite tourist
+                      destination but as one of the most desired locations for studies. Excellent teaching methodology,
+                      top-notch technology and highly valuable degree add grades to your studies.
+                      As per the information received from Canada visa consultants to study in Canada, one needs to get
+                      a student visa and study permit.
+
+                    </p>
+
+                    <ul class="imp-links">
+                      <h5 class="text-danger" style="margin-top:30px; margin-left:45px;">Important Links!</h5>
+                      <li><a
+                          href="https://www.ariseimmigrationconsultant.com/canadastudentvisaconsultantinahmedabad.php">Arise
+                          Immigration Consultant</a></li>
+                      <li><a
+                          href="https://visaguide.world/canada-visa/#:~:text=a%20Canada%20visa.-,Who%20Needs%20a%20Canadian%20Visa%3F,work%2C%20or%20immigrate%20to%20Canada.">Visa
+                          Guide.World</a></li>
+                      <li> <a href="https://www.canada.ca/en/services/immigration-citizenship.html">Canada.ca</a> </li>
+                      <li><a href="https://www.immigration.ca/">Immigration.ca</a></li>
+                      <li><a href="https://www.canadim.com/immigrate/">Canadaim</a></li>
+                      <li><a href="https://workpermit.com/immigration/canada">Workpermit.com</a></li>
+                      <li><a
+                          href="https://www.buffalo.edu/international-student-services/immigration-visa/travel/outside-the-us.html">University
+                          at Buffalo</a></li>
+                    </ul>
+                    <h4 class="text-primary text-center" style="margin-top:70px; margin-left:45px;">Want to consult?
+                    </h4>
+                    <p style="margin-left:50px;" class="text-center">Email us on:</p>
+                    <p class="text-center" style="color:  rgb(154, 150, 150);margin-top:-20px;margin-left:37px;">
+                      ghc-info@gmail.com</p>
+
+                  </div>
+                </div>
+                <div class="container">
+                  <h1 class="text-danger" style="margin-top:35px;"> What are the eligibility criteria for a Canadian
+                    Student Visa? </h1>
+                  <ul class="content-ul my-3 ">
+                    <p>To apply for a Canada student visa, one must fulfil the following requirements</p>
+                    <li>A Visa Application Center Consent form.</li>
+                    <li>A valid passport.</li>
+                    <li>
+                      A passport having a travel history and at least one blank page which is not the last page.</li>
+                    <li>Court documents from your country stating your clean criminal history.
+                    </li>
+                    <li>A declaration letter signed by you has to be submitted to the Canadian government wherein you
+                      have to explain why they should give you a student visa and study permit. </li>
+                    <li>Proof of your employment or education status. It can be in the form of your resume or
+                      diploma/degree.
+                    </li>
+                    <li>Bank statements proving that you have enough funds to carry out your studies and expenses in
+                      Canada.
+                    </li>
+                    <li>A letter of explanation signed by you which states the reason for studying in Canada. Moreover,
+                      it should state that you understand your responsibilities in Canada and abide by the rules of the
+                      Canadian government.
+                    </li>
+                    <li>UCI (Unique Client Identifier), if you have previously applied for the study permit in Canada.
+                      This number can be found in any letter issued earlier. However, no UCI is required if you are
+                      applying for the first time.
+                    </li>
+                    <p>It is important to note that all documents should be in either English or French. If not, please
+                      get them translated in any of the two languages and proceed to the submission of the application
+                      form and fees.
+
+                    </p>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
         </div>
-        <div class="tab-pane fade" id="UK-accomodate" role="tabpanel" aria-labelledby="UK-accomodate-tab" tabindex="0">
+        <div class="tab-pane fade" id="canada-accomodate" role="tabpanel" aria-labelledby="canada-accomodate-tab"
+          tabindex="0">
+          <!-- accomodation begin  -->
+          <section class="breadcrumb-area-accomodate breadcrumb-before">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="inner-text text-center clearfix">
+                    <div class="title wow slideInUp animated animated" data-wow-delay="0.3s" data-wow-duration="1500ms"
+                      style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: slideInUp;">
+                      <h1>Find your comfort with <span style="color:green">G</span>lobal<span
+                          style="color:brown">H</span>ub<span style="color:blue">C</span>onnect
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-          <h1> C accomodate</h1>
+          <!-- inner content  -->
+
+          <section class="canada-accomodate-sec" style="background-color: white;">
+            <div class="container">
+              <h1 class=" text-danger text-center my-2">Explore a variety of housing options with GlobalHubConnect</h1>
+              <img class="my-3" src="assets/img/recommendations-img/Accomodation-ss.png"
+                style="width:80vw; margin-top:20px" class="img-fluid" alt="">
+              <div class="row" style="margin-top:40px">
+
+                <!-- Left column  -->
+
+                <div class="col-xl-8 col-lg-8 col-md-12 content-ul">
+                  <h1 class="text-danger"> Accomodation in Canada </h1>
+                  <p>When searching for accommodation, it's essential to consider factors such as location, budget,
+                    safety, transportation options, and proximity
+                    to amenities such as grocery stores, public transit, and campus facilities. Start your search early
+                    and explore multiple options to find the
+                    accommodation that best suits your needs and preferences.</p>
+                  <p>
+                    When searching for accommodation in Canada as a student, there are several resources and options you
+                    can explore:</p>
+
+                  <h3 class="text-danger" style="margin-top:35px;">Accomodation by GlobalHubConnect: </h3>
+                  <p>Our accommodation search tool is your one-stop destination for discovering a wide range of housing
+                    options, including apartments, homestays, student residences, and shared living arrangements,
+                    tailored
+                    to meet the diverse needs of students studying abroad.</p>
+
+                  <h3 class="text-danger " style="margin-top:35px;">Accommodation search tool by GlobalHubConnect:</h3>
+
+                  <p>Our accommodation search tool is your key to unlocking a wide range of housing options that meet
+                    your
+                    preferences, budget, and lifestyle in your host country.</p>
+                  <div class="box" style="display:flex;float: left;">
+                    <img src="assets/img/House-search.webp" style="height: 160px;" class="img-fluid" alt="">
+                    <ul class="red-marker">
+                      <li style="margin:10px 0px;">Filter Houses by Area, pricing, rooms and more.</li>
+                      <li style="margin:10px 0px;"> Choose from campus dormitories, shared apartments, homestays, and
+                        more.</li>
+                      <li style="margin:10px 0px;">House tour, no brokerage fee and many more support.</li>
+                    </ul>
+                  </div>
+                  <div class="d-flex-center" style="width:50vw;height:45vh;">
+                    <h1 class="text-danger text-center">Want to Know more? Explore GlobalHubConnect:</h1>
+                    <a href="accomodation.html"> <button class="btn btn-primary "
+                        style="width:35vw;">Explore</button></a>
+                  </div>
+                </div>
 
 
+                <!-- right coloumn  -->
+
+                <div class="col-xl-4 col-lg-4 col-md-12 px-4">
+                  <img src="assets/img/accomodation1.webp" alt="" class="img-fluid">
+                  <p class="my-3">When searching for accommodation in Canada as a student, there are several resources
+                    and options you can explore:</p>
+                  <ul class="red-marker content-ul">
+                    <li>University Accommodation Services</li>
+                    <li>Off-Campus Housing Websites</li>
+                    <li>Student Housing Co-operatives</li>
+                    <li>Homestay Programs</li>
+                    <li>Roommate Matching Services</li>
+                    <li>Temporary Accommodation</li>
+                    <li>Local Classifieds and Community Boards</li>
+                  </ul>
+
+                  <ul class="imp-links">
+                    <h5 class="text-danger" style="margin-top:30px; margin-left:45px;">Important Links!</h5>
+                    <li><a
+                        href="https://www.ariseimmigrationconsultant.com/canadastudentvisaconsultantinahmedabad.php">Arise
+                        Immigration Consultant</a></li>
+                    <li><a
+                        href="https://visaguide.world/canada-visa/#:~:text=a%20Canada%20visa.-,Who%20Needs%20a%20Canadian%20Visa%3F,work%2C%20or%20immigrate%20to%20Canada.">Visa
+                        Guide.World</a></li>
+                    <li> <a href="https://www.canada.ca/en/services/immigration-citizenship.html">Canada.ca</a> </li>
+                    <li><a href="https://www.immigration.ca/">Immigration.ca</a></li>
+                    <li><a href="https://www.canadim.com/immigrate/">Canadaim</a></li>
+                    <li><a href="https://workpermit.com/immigration/canada">Workpermit.com</a></li>
+                    <li><a
+                        href="https://www.buffalo.edu/international-student-services/immigration-visa/travel/outside-the-us.html">University
+                        at Buffalo</a></li>
+                  </ul>
+
+                </div>
+              </div>
+
+            </div>
+          </section>
         </div>
-        <div class="tab-pane fade" id="UK-jobs" role="tabpanel" aria-labelledby="UK-jobs-tab" tabindex="0">
-          <h1> C jobs</h1>
+        <div class="tab-pane fade" id="canada-jobs" role="tabpanel" aria-labelledby="canada-jobs-tab" tabindex="0">
+          <!-- jobs begin  -->
+          <section class="breadcrumb-area-jobs breadcrumb-before">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="inner-text text-center clearfix">
+                    <div class="title wow slideInUp animated animated" data-wow-delay="0.3s" data-wow-duration="1500ms"
+                      style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: slideInUp;">
+                      <h1>Find your best fit with <span style="color:green">G</span>lobal<span
+                          style="color:brown">H</span>ub<span style="color:blue">C</span>onnect
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
+          <!-- inner content  -->
 
+          <section class="canada-jobs-sec " style="background-color:white;">
+            <div class="container">
+              <div class="container">
+                <h1 class=" text-danger text-center my-2">Explore a wide range of job roles with GlobalHubConnect</h1>
+                <img class="my-3" src="assets/img/recommendations-img/Jobs-ss.png" style="width:80vw; margin-top:20px"
+                  class="img-fluid" alt="">
+                <div class="row" style="margin-top:40px">
+                  <div class="row">
+
+                    <!-- Left column  -->
+                    <div class="col-xl-8 col-lg-8 col-md-12 content-ul">
+                      <h1 class="text-danger"> Jobs in Canada </h1>
+                      <p>Finding a job as a student in Canada can provide valuable work experience, help cover living
+                        expenses, and contribute to your overall financial stability.</p>
+                      <p>
+                        When searching for Jobs in Canada as a student, there are several resources and options you can
+                        explore:</p>
+
+                      <h3 class="text-danger" style="margin-top:35px;">Jobs portal by GlobalHubConnect: </h3>
+                      <p>Our job search tool is your gateway to discovering a wide range of employment options that
+                        cater to
+                        your skills, interests, and career aspirations in your host country. Whether you're seeking
+                        part-time
+                        work to support your studies, internships to gain valuable experience in your field, or
+                        full-time
+                        employment opportunities post-graduation, our platform offers a comprehensive database of job
+                        listings
+                        to suit your needs.</p>
+
+                      <h3 class="text-danger " style="margin-top:35px;">Jobs search tool by GlobalHubConnect:</h3>
+
+                      <p>Our job search tool is your gateway to discovering a wide range of employment options that
+                        cater
+                        to your skills, interests, and career aspirations in your host country.</p>
+                      <div class="box" style="display:flex;float: left;">
+                        <img src="assets/img/opportunity.webp" style="height: 160px;" class="img-fluid" alt="">
+                        <ul class="red-marker">
+                          <li style="margin:10px 0px;">Filter Jobs by Area, stipend, roles and more.</li>
+                          <li style="margin:10px 0px;"> Choose from wide range of fortune companies. .</li>
+                          <li style="margin:10px 0px;"> Internships, part-time job, permanent jobs and more.</li>
+                        </ul>
+                      </div>
+                      <div class="d-flex-center" style=" width:50vw;height:55vh;">
+                        <h1 class="text-danger text-center">Want to Know more? Explore GlobalHubConnect:</h1>
+                        <a href="Jobs_abroad.html"> <button class="btn btn-primary "
+                            style="width:35vw;">Explore</button></a>
+                      </div>
+                    </div>
+
+                    <!-- right coloumn  -->
+
+                    <div class="col-xl-4 col-lg-4 col-md-12">
+                      <img src="assets/img/job1.webp" alt="" class="img-fluid">
+                      <p class="my-3">When searching for a Job in Canada as a student, there are several resources and
+                        options you can explore:</p>
+                      <ul class="red-marker content-ul">
+                        <li>On-Campus Jobs</li>
+                        <li>Off-Campus Employment</li>
+                        <li>Co-op and Internship Programs</li>
+                        <li>Job Search Websites</li>
+                        <li>Networking and Career Events</li>
+                        <li>Student Associations and Clubs</li>
+                        <li>Professional Associations</li>
+                      </ul>
+
+                      <ul class="imp-links">
+                        <h5 class="text-danger" style="margin-top:30px; margin-left:45px;">Important Links!</h5>
+                        <li><a
+                            href="https://www.ariseimmigrationconsultant.com/canadastudentvisaconsultantinahmedabad.php">Arise
+                            Immigration Consultant</a></li>
+                        <li><a
+                            href="https://visaguide.world/canada-visa/#:~:text=a%20Canada%20visa.-,Who%20Needs%20a%20Canadian%20Visa%3F,work%2C%20or%20immigrate%20to%20Canada.">Visa
+                            Guide.World</a></li>
+                        <li> <a href="https://www.canada.ca/en/services/immigration-citizenship.html">Canada.ca</a>
+                        </li>
+                        <li><a href="https://www.immigration.ca/">Immigration.ca</a></li>
+                        <li><a href="https://www.canadim.com/immigrate/">Canadaim</a></li>
+                        <li><a href="https://workpermit.com/immigration/canada">Workpermit.com</a></li>
+                        <li><a
+                            href="https://www.buffalo.edu/international-student-services/immigration-visa/travel/outside-the-us.html">University
+                            at Buffalo</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+          </section>
         </div>
-        <div class="tab-pane fade" id="UK-community" role="tabpanel" aria-labelledby="UK-community-tab" tabindex="0">
-          <h1> C community</h1>
 
+        <!-- </div> -->
+
+        <div class="tab-pane fade" id="canada-community" role="tabpanel" aria-labelledby="canada-community-tab"
+          tabindex="0">
+          <!-- community begin  -->
+          <section class="breadcrumb-area-community breadcrumb-before">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="inner-text text-center clearfix">
+                    <div class="title wow slideInUp animated animated" data-wow-delay="0.3s" data-wow-duration="1500ms"
+                      style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: slideInUp;">
+                      <h1>Find your local community abroad with <span style="color:green">G</span>lobal<span
+                          style="color:brown">H</span>ub<span style="color:blue">C</span>onnect
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- inner content  -->
+
+          <section class="canada-community-sec" style="background-color: white;">
+            <div class="container">
+              <div class="row">
+
+                <!-- Left column  -->
+
+                <div class="col-xl-8 col-lg-8 col-md-12">
+                  <h1 class="text-danger text-center"> We are coming soon! </h1>
+                </div>
+
+                <!-- right coloumn  -->
+
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                  <!-- here we are -->
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="tab-pane fade" id="UK-culture" role="tabpanel" aria-labelledby="UK-culture-tab" tabindex="0">
 
-          <h1> UK culture</h1>
+        <!-- </div> -->
+        <div class="tab-pane fade" id="canada-culture" role="tabpanel" aria-labelledby="canada-culture-tab"
+          tabindex="0">
 
+          <!-- Rights begin  -->
+          <section class="breadcrumb-area-rights breadcrumb-before">
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="inner-text text-center clearfix">
+                    <div class="title wow slideInUp animated animated" data-wow-delay="0.3s" data-wow-duration="1500ms"
+                      style="visibility: visible; animation-duration: 1500ms; animation-delay: 0.3s; animation-name: slideInUp;">
+                      <h1>Canadian Law and Justice </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- inner content  -->
+
+          <section class="canada-rights-sec" style="background-color: white;">
+            <div class="container">
+              <div class="row">
+
+                <!-- Left column  -->
+
+                <div class="col-xl-6 col-lg-6 col-md-12 red-marker content-ul" style="border:1px black;">
+                  <h1 class="text-danger"> Candian Law and Justice </h1>
+                  <p>In Canada, the law applies to everyone, including:</p>
+                  <ul>
+                    <li>Police</li>
+                    <li>Government</li>
+                    <li>People</li>
+                  </ul>
+                  <p>Canadian laws recognize and protect basic rights and freedoms, such as liberty and equality.
+                  </p>
+                  <h3 class="text-danger">Public law and private law.</h3>
+                  <p>Law can be divided into public and private law.</p>
+                  <p>Public laws set the rules for the relationship between a person and society and for the roles of
+                    different levels of government. This includes:
+                  </p>
+                  <ul>
+                    <li>criminal law.</li>
+                    <li>Constitutional law.</li>
+                    <li>administrative law</li>
+                  </ul>
+                  <p>Private or civil law deals with the relationships between people. Civil laws set the rules for:
+                  </p>
+                  <ul>
+                    <li>contracts.</li>
+                    <li>owning property</li>
+                    <li> rights and duties of family members </li>
+                    <li>damage caused by others to someone or to their property
+                    </li>
+                  </ul>
+                  <h3 class="text-danger">Legal representation</h3>
+                  <p>If you need help in a Canadian court, it’s a good idea to hire a lawyer. There are services that
+                    can help you find a lawyer, such as:
+                  </p>
+                  <ul>
+                    <li>referral services from provincial and territorial law societies
+                    </li>
+                    <li><a href="https://www.justicenet.ca/">JusticeNet</a> (telephone: 1-866-919-3219)
+                    </li>
+                  </ul>
+                  <p>Depending on your income, you may be able to get a lawyer for free. This is called legal aid. Each
+                    province and territory has a legal aid society. You can also ask an immigrant-serving organization
+                    in your city or town for help hiring a lawyer.
+                  </p>
+                  <h3 class="text-danger">Police</h3>
+                  <p>The police in Canada keep people safe and enforce the law. There are different types of police,
+                    including:
+                  </p>
+                  <ul>
+                    <li>federal</li>
+                    <li>Provisional</li>
+                    <li>territorial</li>
+                    <li>Municipal</li>
+                  </ul>
+                  <p>The number for your local police is in the front pages of the telephone book. If you need to call
+                    the police in an emergency, dial 911.
+                  </p>
+                  <p>If the police question or arrest you:
+                  </p>
+                  <ul>
+                    <li>don’t resist </li>
+                    <li>be ready to show some kind of identification. </li>
+                    <li>make sure you know why you’ve been arrested. </li>
+                    <li>ask to have a lawyer and a translator present (if you need one).</li>
+                    <li>don’t offer money, gifts or services in exchange for special treatment. </li>
+                  </ul>
+
+                </div>
+
+                <!-- right coloumn  -->
+
+                <div class="col-xl-6 col-lg-6 col-md-12 blue-marker content-ul" style="border:1px black;">
+                  <h1 class="text-primary"> Rights and freedom in Canada </h1>
+                  <p>Learn about the Charter that protects your rights and what your rights and duties in Canada are.
+                  </p>
+                  <h3 class="text-primary">The Charter protects your rights.</h3>
+                  <p>The Canadian Charter of Rights and Freedoms is part of Canada’s Constitution. It protects you from
+                    the moment you arrive in Canada.
+                  </p>
+                  <p>The Charter:
+                  </p>
+                  <ul>
+                    <li>sets out the values that Canadians live by </li>
+                    <li>describes the kinds of personal human rights and freedoms we can expect in this country </li>
+                  </ul>
+                  <p>Some of these include: <br>
+                    rights to:
+                  </p>
+                  <ul>
+                    <li>life, liberty and personal security </li>
+                    <li>a fair trial, that respects all your legal rights </li>
+                    <li>be presumed innocent until you’re proven guilty </li>
+                    <li>talk to a lawyer as soon as possible if you are arrested </li>
+                    <li>equal protection and benefit under the law, without discrimination </li>
+                  </ul>
+
+                  <p>freedom of:</p>
+                  <ul>
+                    <li>conscience and religion </li>
+                    <li>thought, belief, opinion and expression </li>
+                    <li>the press and other media </li>
+                  </ul>
+
+                  <p>freedom to:</p>
+                  <ul>
+                    <li>join groups </li>
+                    <li>hold peaceful meetings </li>
+                  </ul>
+
+                  <p>protection from:</p>
+                  <ul>
+                    <li>unreasonable search or seizure </li>
+                    <li>being detained or put in prison without a just reason </li>
+                  </ul>
+
+                  <h3 class="text-primary">Rights come with duties.</h3>
+                  <p>People who live in Canada are expected to:</p>
+                  <ul>
+                    <li>understand and obey Canadian laws. </li>
+                    <li>help protect Canada's multicultural heritage. </li>
+                    <li>allow other Canadians to enjoy their rights and freedoms. </li>
+                  </ul>
+                  <p>If you live in Canada, you should become informed about politics and help to improve your
+                    communities and the country.
+                  </p>
+                  <p>Citizens of Canada have other rights and freedoms, such as the right to vote in elections. To learn
+                    about these rights, read the <a href="https://laws.justice.gc.ca/eng/Const/page-15.html">Canadian
+                      Charter of Rights and Freedoms.</a>
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
 
       </div>
+
     </div>
+  </div>
+
+
+  <!-- USA content begins  -->
+  <div class="tab-pane fade" id="USA-tab" role="tabpanel" aria-labelledby="USA-tab-btn" tabindex="0">
+
+    <!-- Basic information Links  -->
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="USA-visa-tab" data-bs-toggle="pill" data-bs-target="#USA-visa" type="button"
+          role="tab" aria-controls="USA-visa" aria-selected="true">Visa and Immigration</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="USA-accomodate-tab" data-bs-toggle="pill" data-bs-target="#USA-accomodate"
+          type="button" role="tab" aria-controls="USA-accomodate" aria-selected="false">Accomodation</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="USA-jobs-tab" data-bs-toggle="pill" data-bs-target="#USA-jobs" type="button"
+          role="tab" aria-controls="USA-jobs" aria-selected="false">Jobs</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="USA-community-tab" data-bs-toggle="pill" data-bs-target="#USA-community"
+          type="button" role="tab" aria-controls="USA-community" aria-selected="false">Community</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="USA-culture-tab" data-bs-toggle="pill" data-bs-target="#USA-culture" type="button"
+          role="tab" aria-controls="USA-culture" aria-selected="false">Legal Practices and Rights</button>
+      </li>
+    </ul>
+
+
+    <!-- Tab content  -->
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="USA-visa" role="tabpanel" aria-labelledby="USA-visa-tab" tabindex="0">
+        <h1> C Visa</h1>
+      </div>
+      <div class="tab-pane fade" id="USA-accomodate" role="tabpanel" aria-labelledby="USA-accomodate-tab" tabindex="0">
+
+        <h1> C accomodate</h1>
+
+
+      </div>
+      <div class="tab-pane fade" id="USA-jobs" role="tabpanel" aria-labelledby="USA-jobs-tab" tabindex="0">
+        <h1> C jobs</h1>
+
+
+      </div>
+      <div class="tab-pane fade" id="USA-community" role="tabpanel" aria-labelledby="USA-community-tab" tabindex="0">
+        <h1> C community</h1>
+
+
+      </div>
+      <div class="tab-pane fade" id="USA-culture" role="tabpanel" aria-labelledby="USA-culture-tab" tabindex="0">
+
+        <h1> USA culture</h1>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- UK content begins  -->
+  <div class="tab-pane fade" id="UK-tab" role="tabpanel" aria-labelledby="UK-tab-btn" tabindex="0">
+
+    <!-- Basic information Links  -->
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="UK-visa-tab" data-bs-toggle="pill" data-bs-target="#UK-visa" type="button"
+          role="tab" aria-controls="UK-visa" aria-selected="true">Visa and Immigration</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="UK-accomodate-tab" data-bs-toggle="pill" data-bs-target="#UK-accomodate"
+          type="button" role="tab" aria-controls="UK-accomodate" aria-selected="false">Accomodation</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="UK-jobs-tab" data-bs-toggle="pill" data-bs-target="#UK-jobs" type="button"
+          role="tab" aria-controls="UK-jobs" aria-selected="false">Jobs</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="UK-community-tab" data-bs-toggle="pill" data-bs-target="#UK-community"
+          type="button" role="tab" aria-controls="UK-community" aria-selected="false">Community</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="UK-culture-tab" data-bs-toggle="pill" data-bs-target="#UK-culture" type="button"
+          role="tab" aria-controls="UK-culture" aria-selected="false">Legal Practices and Rights</button>
+      </li>
+    </ul>
+
+
+    <!-- Tab content  -->
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="UK-visa" role="tabpanel" aria-labelledby="UK-visa-tab" tabindex="0">
+        <h1> C Visa</h1>
+      </div>
+      <div class="tab-pane fade" id="UK-accomodate" role="tabpanel" aria-labelledby="UK-accomodate-tab" tabindex="0">
+
+        <h1> C accomodate</h1>
+
+
+      </div>
+      <div class="tab-pane fade" id="UK-jobs" role="tabpanel" aria-labelledby="UK-jobs-tab" tabindex="0">
+        <h1> C jobs</h1>
+
+
+      </div>
+      <div class="tab-pane fade" id="UK-community" role="tabpanel" aria-labelledby="UK-community-tab" tabindex="0">
+        <h1> C community</h1>
+
+      </div>
+      <div class="tab-pane fade" id="UK-culture" role="tabpanel" aria-labelledby="UK-culture-tab" tabindex="0">
+
+        <h1> UK culture</h1>
+
+      </div>
+
+    </div>
+  </div>
   </div>
 
 
@@ -325,7 +884,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
   <div id="user_id" style="display: none;"></div>
 
   <!-- Vendor JS Files -->
