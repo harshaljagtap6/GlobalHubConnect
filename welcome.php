@@ -1,4 +1,4 @@
-<?php $username = $_GET['username'];?>
+<?php $username = $_GET['username']; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +22,8 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -32,51 +33,57 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-<style>
-.container_acc{
-    margin-top: 20vh;
-    width:90vw;
-    display:flex;
-    justify-content: center;
-    gap:40px;
-    flex-wrap: wrap;
-}
-.card_acc:hover{
-     transform: scale(1.02);
-}
-.welcome_dp{
-    display: flex;
-    width:100vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
-.greet-text{
-    font-size: 35px;
-    display: block;
-    position: absolute;
-    margin-top: 80vh;
-    margin-left:38.5vw;
-}
-.dropdown-menu{
- background-color:var(--color-secondary);
- filter: opacity(0.8);
- margin-top: -13.5px;
- z-index:1;
- width:100px;
-}
-.dropdown-item:hover{
-  font-size:110%;
-  background-color:var(--color-secondary);
-}
-</style>
+  <style>
+    .container_acc {
+      margin-top: 20vh;
+      width: 90vw;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card_acc:hover {
+      transform: scale(1.02);
+    }
+
+    .welcome_dp {
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .greet-text {
+      font-size: 35px;
+      display: block;
+      position: absolute;
+      margin-top: 80vh;
+      margin-left: 38.5vw;
+    }
+
+    .dropdown-menu {
+      background-color: var(--color-secondary);
+      filter: opacity(0.8);
+      margin-top: -13.5px;
+      z-index: 1;
+      width: 100px;
+    }
+
+    .dropdown-item:hover {
+      font-size: 110%;
+      background-color: var(--color-secondary);
+    }
+  </style>
 
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header d-flex align-items-center fixed-top" style="background-color: rgba(14, 29, 52, 0.9);">
+  <header id="header" class="header d-flex align-items-center fixed-top"
+    style="background-color: rgba(14, 29, 52, 0.9);">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -93,17 +100,18 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Services
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" style="color:white; " href="Rent-Home.html">Rent Home</a>
-          <a class="dropdown-item" style="color:white; " href="Recruite.html">Recruite</a>
-</div>
-      </li>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" style="color:white; " href="Rent-Home.html">Rent Home</a>
+              <a class="dropdown-item" style="color:white; " href="Recruite.html">Recruite</a>
+            </div>
+          </li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a class="get-a-quote" href="signup.html">Logout</a></li>
+          <li><a class="get-a-quote" href="login.html">Logout</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -111,21 +119,21 @@
   </header><!-- End Header -->
   <!-- End Header -->
   <div class="greet-text">
-  <?php echo "Welcome, ", $username, "!!"; ?>
-      </div>
+    <?php echo "Welcome, ", $username, "!!"; ?>
+  </div>
   <div class="welcome_dp">
-  <?php  
+    <?php
     echo '<img src="assets/img/team/dhanesh-P.jpeg" style="width:415px; height:400px; object-fit: cover; object-position: top center;" class="img-fluid" alt="">';
-  ?>
+    ?>
   </div>
 
   <!-- container containing accomodation cards -->
-  
-  
+
+
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer" style="margin-top: 15px;" >
-    
-  <div class="container" >
+  <footer id="footer" class="footer" style="margin-top: 15px;">
+
+    <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
@@ -138,7 +146,7 @@
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-  
+
         <div class="col-lg-3 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
@@ -149,7 +157,7 @@
             <li><a href="#">Privacy policy</a></li>
           </ul>
         </div>
-  
+
         <div class="col-lg-4 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
@@ -163,7 +171,7 @@
         </div>
       </div>
     </div>
-  
+
     <div class="container mt-4">
       <div class="copyright">
         &copy; Copyright <strong><span>GlobalHubConnect</span></strong>. All Rights Reserved
@@ -172,26 +180,33 @@
         Designed by <strong>GlobalHubConnect</strong> team
       </div>
     </div>
-  
+
   </footer><!-- End Footer -->
   <!-- End Footer -->
-  
- 
-  <!-- Vendor JS Files -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
-  </body>
-  </html>
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
 
 
 <?php ?>
