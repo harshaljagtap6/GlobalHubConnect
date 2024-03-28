@@ -182,7 +182,7 @@
                 <option value="India">India</option>
                 <option value="USA">USA</option>
                 <option value="Canada">Canada</option>
-            </select>
+              </select>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Community Name:</label>
@@ -319,7 +319,7 @@
       setTimeout(function () {
         user_id = $("#user_id").text();
         var data = {
-          "method": "get_rent_home",
+          "method": "get_community_pages",
           "user_id": user_id
         };
 
@@ -420,23 +420,21 @@
           var cTag = $("#cTag").val();
           var cDesc = $("#cDesc").val();
           var cRules = $("#cRules").val();
-          var amin = $("#admin").val();
-          
+          var admin = $("#admin").val();          
           var user_id = $("#user_id").text();
-
-
           var data = {
-            "method": "add_home",
-            "Nationality": country,
-            "Community Name": cName,
-            "Community Tag": cTag,
-            "Community Description": cDesc,
-            "Community Rules": cRules,
-            "Admin": admin,
+            "method": "add_community_pages",
+            "nationality": country,
+            "community_name": cName,
+            "community_tag": cTag,
+            "community_description": cDesc,
+            "community_rules": cRules,
+            "admin": admin,
             "user_id": user_id
           };
 
           var formData = new FormData();
+          console.log(data);
           formData.append('data', JSON.stringify(data));
 
           $.ajax({

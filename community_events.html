@@ -211,7 +211,7 @@
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Duration:</label>
-              <input type="email" class="form-control" id="eDuration" data-parsley-required>
+              <input type="text" class="form-control" id="eDuration" data-parsley-required>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Event Organizer:</label>
@@ -360,8 +360,7 @@
       setTimeout(function () {
         user_id = $("#user_id").text();
         var data = {
-          "method": "get_rent_home",
-          "user_id": user_id
+          "method": "get_community_events"
         };
 
         var formData = new FormData();
@@ -518,7 +517,7 @@
           var state = $("#state").val();
           var city = $("#city").val();
           var Address = $("#Address").val();
-          var eDate = $("eDate").val();
+          var eDate = $("#eDate").val();
           var eTime = $("#eTime").val();
           var eDuration = $("#eDuration").val();
           var eOrganizer = $("#eOrganizer").val();
@@ -534,24 +533,24 @@
 
 
           var data = {
-            "method": "add_home",
-            "Event Title": eTitle,
-            "Event description":eDesc,
+            "method": "add_events",
+            "event_title": eTitle,
+            "event_description":eDesc,
             "country": country,
             "state": state,
             "city": city,
-            "Location": Address,
-            "Date":eDate,
-            "Time":eTime,
+            "location": Address,
+            "date":eDate,
+            "time":eTime,
             "duration": eDuration,
-            "Event Organizer": eOrganizer,
-            "Event Guest":eGuest,
-            "Event Fee":eFee,
-            "Event Host":eHost,
-            "Event Promotion":ePromotion,
-            "Telephone": telephone,
+            "event_organizer": eOrganizer,
+            "event_guest":eGuest,
+            "event_fee":eFee,
+            "event_host":eHost,
+            "event_promotion":ePromotion,
+            "telephone": telephone,
             "email": email,
-            "Additional Information": more,
+            "additional_information": more,
             "user_id": user_id
           };
 
@@ -589,92 +588,92 @@
           });
 
 
-          var cardHtml = `
-        <div class="card shadow my-3">
-            <div class="card-header bg-primary text-white">
-                Details
-            </div>
-            <div class="card-body">
-                <table class="table table-striped">
-                    <tbody>
-                      <tr>
-                            <th scope="row">Event Title:</th>
-                            <td>${eTitle}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Description:</th>
-                            <td>${eDesc}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Country:</th>
-                            <td>${country}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">State:</th>
-                            <td>${state}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">City:</th>
-                            <td>${city}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Location:</th>
-                            <td>${Address}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Dat:</th>
-                            <td>${eDate}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Time:</th>
-                            <td>${eTime}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Duration:</th>
-                            <td>${eDuration}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Organizer:</th>
-                            <td>${eOrganizer}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Guest:</th>
-                            <td>${eGuest}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Fee:</th>
-                            <td>${eFee}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Host:</th>
-                            <td>${eHost}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Event Promotion:</th>
-                            <td>${ePromotion}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Telephone:</th>
-                            <td>${telephone}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Email:</th>
-                            <td>${email}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Additional Information:</th>
-                            <td class="details-td">${more}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    `;
+    //       var cardHtml = `
+    //     <div class="card shadow my-3">
+    //         <div class="card-header bg-primary text-white">
+    //             Details
+    //         </div>
+    //         <div class="card-body">
+    //             <table class="table table-striped">
+    //                 <tbody>
+    //                   <tr>
+    //                         <th scope="row">Event Title:</th>
+    //                         <td>${eTitle}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Description:</th>
+    //                         <td>${eDesc}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Country:</th>
+    //                         <td>${country}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">State:</th>
+    //                         <td>${state}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">City:</th>
+    //                         <td>${city}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Location:</th>
+    //                         <td>${Address}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Dat:</th>
+    //                         <td>${eDate}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Time:</th>
+    //                         <td>${eTime}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Duration:</th>
+    //                         <td>${eDuration}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Organizer:</th>
+    //                         <td>${eOrganizer}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Guest:</th>
+    //                         <td>${eGuest}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Fee:</th>
+    //                         <td>${eFee}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Host:</th>
+    //                         <td>${eHost}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Event Promotion:</th>
+    //                         <td>${ePromotion}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Telephone:</th>
+    //                         <td>${telephone}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Email:</th>
+    //                         <td>${email}</td>
+    //                     </tr>
+    //                     <tr>
+    //                         <th scope="row">Additional Information:</th>
+    //                         <td class="details-td">${more}</td>
+    //                     </tr>
+    //                 </tbody>
+    //             </table>
+    //         </div>
+    //     </div>
+    // `;
 
 
 
           // Append the Bootstrap card to the desired div
-          $('.Homes-Status').append(cardHtml);
+          // $('.Homes-Status').append(cardHtml);
 
         }
       })
